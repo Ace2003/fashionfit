@@ -39,6 +39,14 @@ header p {
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filters-section.scrolled {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 25px rgba(102, 126, 234, 0.15);
 }
 
 .filter-group {

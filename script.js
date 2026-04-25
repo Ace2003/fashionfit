@@ -60,6 +60,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 setActiveButton('.scene-btn', this);
             });
         });
+
+        window.addEventListener('scroll', handleScroll);
+    }
+
+    function handleScroll() {
+        const filtersSection = document.querySelector('.filters-section');
+        if (!filtersSection) return;
+
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 50) {
+            filtersSection.classList.add('scrolled');
+        } else {
+            filtersSection.classList.remove('scrolled');
+        }
     }
 
     function setActiveButton(selector, activeBtn) {
