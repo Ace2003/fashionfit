@@ -9,349 +9,2838 @@
 <body>
     <header>
         <h1>时尚穿搭指南</h1>
-        <p>根据不同场合，打造完美形象</p>
+        <p>根据性别、年龄、场合，打造专属于你的完美形象</p>
     </header>
 
-    <nav class="scenes-nav">
-        <button class="scene-btn active" data-scene="daily">日常穿搭</button>
-        <button class="scene-btn" data-scene="business">商务穿搭</button>
-        <button class="scene-btn" data-scene="date">约会穿搭</button>
-        <button class="scene-btn" data-scene="party">派对穿搭</button>
-        <button class="scene-btn" data-scene="play">玩耍穿搭</button>
-        <button class="scene-btn" data-scene="game">游戏穿搭</button>
-    </nav>
+    <!-- 筛选器区域 -->
+    <section class="filters-section">
+        <div class="filter-group">
+            <label class="filter-label">👤 性别</label>
+            <div class="filter-buttons">
+                <button class="filter-btn gender-btn active" data-gender="female">女生</button>
+                <button class="filter-btn gender-btn" data-gender="male">男生</button>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <label class="filter-label">🎂 年龄段</label>
+            <div class="filter-buttons">
+                <button class="filter-btn age-btn" data-age="teen">青少年 (13-17岁)</button>
+                <button class="filter-btn age-btn active" data-age="young">青年 (18-30岁)</button>
+                <button class="filter-btn age-btn" data-age="adult">中年 (31-50岁)</button>
+                <button class="filter-btn age-btn" data-age="senior">成熟 (50岁+)</button>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <label class="filter-label">📍 场景</label>
+            <div class="filter-buttons scene-buttons">
+                <button class="filter-btn scene-btn active" data-scene="daily">日常穿搭</button>
+                <button class="filter-btn scene-btn" data-scene="business">商务穿搭</button>
+                <button class="filter-btn scene-btn" data-scene="date">约会穿搭</button>
+                <button class="filter-btn scene-btn" data-scene="party">派对穿搭</button>
+                <button class="filter-btn scene-btn" data-scene="play">玩耍穿搭</button>
+                <button class="filter-btn scene-btn" data-scene="game">游戏穿搭</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 穿搭方案选择区域 -->
+    <section class="outfit-options-section">
+        <h3 class="options-title">选择穿搭方案</h3>
+        <div class="outfit-options" id="outfitOptions">
+            <!-- 由JavaScript动态生成 -->
+        </div>
+    </section>
 
     <main>
-        <!-- 日常穿搭 -->
-        <section id="daily" class="scene-section active">
+        <!-- 穿搭展示区域 -->
+        <section id="outfitDisplay" class="outfit-display">
             <div class="scene-header">
-                <h2>日常穿搭</h2>
-                <p class="scene-desc">舒适自在，轻松应对日常生活</p>
+                <h2 id="currentSceneTitle">日常穿搭</h2>
+                <p class="scene-desc" id="currentSceneDesc">舒适自在，轻松应对日常生活</p>
+                <div class="current-filters" id="currentFilters">
+                    <span class="filter-tag">👤 女生</span>
+                    <span class="filter-tag">🎂 青年 (18-30岁)</span>
+                    <span class="filter-tag">方案 A</span>
+                </div>
             </div>
             
-            <div class="outfit-grid">
-                <div class="outfit-item">
-                    <div class="item-icon">💎</div>
-                    <h3>首饰</h3>
-                    <div class="item-details">
-                        <p class="item-name">简约银饰/细金链</p>
-                        <p class="item-reason"><strong>理由：</strong>日常穿搭追求简约不张扬，细金链或简约银饰能够增添精致感而不显夸张。适合办公室、购物、咖啡等多种日常场合，与休闲装或商务休闲装都能完美搭配。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👕</div>
-                    <h3>上衣</h3>
-                    <div class="item-details">
-                        <p class="item-name">基础款T恤/简约衬衫</p>
-                        <p class="item-reason"><strong>理由：</strong>基础款T恤（白色、灰色、黑色）是百搭神器，单穿或内搭都很适合。简约衬衫（棉麻材质）则适合稍正式的日常场合，如办公室或商务会议。选择舒适透气的面料，确保一整天的穿着体验。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👖</div>
-                    <h3>裤子</h3>
-                    <div class="item-details">
-                        <p class="item-name">牛仔裤/休闲裤</p>
-                        <p class="item-reason"><strong>理由：</strong>直筒牛仔裤是日常穿搭的经典选择，修饰腿型且百搭。休闲裤（卡其色、藏青色）则更显利落，适合需要稍正式感的日常场合。选择修身但不紧绷的版型，兼顾美观与舒适度。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">🧥</div>
-                    <h3>外套</h3>
-                    <div class="item-details">
-                        <p class="item-name">牛仔外套/休闲西装</p>
-                        <p class="item-reason"><strong>理由：</strong>牛仔外套自带休闲随性气质，与T恤、牛仔裤搭配形成经典美式风格。休闲西装则提升整体气质，适合日常办公或商务会面。根据天气和场合灵活选择，一件好的外套能让整体造型瞬间升级。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👟</div>
-                    <h3>鞋子</h3>
-                    <div class="item-details">
-                        <p class="item-name">小白鞋/休闲板鞋</p>
-                        <p class="item-reason"><strong>理由：</strong>小白鞋是永恒的经典，几乎能与任何日常穿搭完美搭配，既舒适又时尚。休闲板鞋则更具运动感，适合活泼的日常活动。选择质量好、鞋底柔软的款式，确保长时间行走也不累脚。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 商务穿搭 -->
-        <section id="business" class="scene-section">
-            <div class="scene-header">
-                <h2>商务穿搭</h2>
-                <p class="scene-desc">专业干练，展现职场魅力</p>
-            </div>
-            
-            <div class="outfit-grid">
-                <div class="outfit-item">
-                    <div class="item-icon">💎</div>
-                    <h3>首饰</h3>
-                    <div class="item-details">
-                        <p class="item-name">简约手表/低调袖扣</p>
-                        <p class="item-reason"><strong>理由：</strong>商务场合首饰宜精不宜多，一块优质金属手表既能看时间又彰显品味。男士可选择低调袖扣，女士可佩戴细款珍珠项链。避免过于花哨或夸张的饰品，保持专业稳重的形象。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👔</div>
-                    <h3>上衣</h3>
-                    <div class="item-details">
-                        <p class="item-name">定制衬衫/丝质 blouse</p>
-                        <p class="item-reason"><strong>理由：</strong>男士选择白色或浅蓝色定制衬衫，面料挺括不易皱，领口袖口干净利落。女士可选择丝质或高品质棉麻blouse，颜色以白、米白、藏青、深灰为主。确保尺码合身，过于宽松或紧绷都会影响专业形象。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👖</div>
-                    <h3>裤子</h3>
-                    <div class="item-details">
-                        <p class="item-name">西裤/西装裙</p>
-                        <p class="item-reason"><strong>理由：</strong>男士选择与西装同色系的西裤，裤长刚好盖住鞋面，裤线笔直。女士可选择西裤或及膝西装裙，裙长不宜过短。选择垂坠感好、不易皱的面料（羊毛混纺为佳），确保久坐后仍保持平整。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">🧥</div>
-                    <h3>外套</h3>
-                    <div class="item-details">
-                        <p class="item-name">定制西装/品质大衣</p>
-                        <p class="item-reason"><strong>理由：</strong>一套合身的定制西装是职场必备，颜色以藏青、深灰、黑色为主，面料选择羊毛或羊毛混纺。冬季可外搭一件品质大衣（羊绒或羊毛混纺），长度过膝，颜色与西装协调。投资一件好的西装外套，能穿多年且提升整体气质。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👞</div>
-                    <h3>鞋子</h3>
-                    <div class="item-details">
-                        <p class="item-name">牛津鞋/尖头高跟鞋</p>
-                        <p class="item-reason"><strong>理由：</strong>男士选择黑色或深棕色牛津鞋，鞋面光洁无过多装饰，搭配同色系袜子。女士选择3-5厘米的尖头高跟鞋，颜色以黑、裸色为主，鞋跟不宜过细过高。确保鞋子干净擦亮，破旧的鞋子会破坏整体专业形象。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 约会穿搭 -->
-        <section id="date" class="scene-section">
-            <div class="scene-header">
-                <h2>约会穿搭</h2>
-                <p class="scene-desc">优雅迷人，展现个人魅力</p>
-            </div>
-            
-            <div class="outfit-grid">
-                <div class="outfit-item">
-                    <div class="item-icon">💎</div>
-                    <h3>首饰</h3>
-                    <div class="item-details">
-                        <p class="item-name">精致项链/优雅耳环</p>
-                        <p class="item-reason"><strong>理由：</strong>约会时选择精致但不过分华丽的首饰，一条细钻项链或小巧的珍珠耳环能增添温柔气质。男士可选择简约皮质手链或低调戒指。首饰的作用是点缀而非抢眼，让对方的注意力集中在你的魅力上。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👚</div>
-                    <h3>上衣</h3>
-                    <div class="item-details">
-                        <p class="item-name">针织衫/优雅上衣</p>
-                        <p class="item-reason"><strong>理由：</strong>女士选择柔软的针织衫或带有细节设计的优雅上衣，颜色以温柔的粉色、米色、浅紫为主，V领或一字肩能展现优美颈部线条。男士选择干净的Polo衫或修身衬衫，颜色以白、浅蓝、淡粉为主。面料选择柔软亲肤的材质，增添亲切感。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👗</div>
-                    <h3>下装</h3>
-                    <div class="item-details">
-                        <p class="item-name">A字裙/修身裤</p>
-                        <p class="item-reason"><strong>理由：</strong>女士选择及膝A字裙或包臀裙，展现优雅曲线但不过分暴露。修身裤也是不错的选择，搭配高跟鞋显腿长。男士选择修身休闲裤或卡其裤，颜色与上衣协调。避免过于宽松或紧绷的款式，舒适自在才能展现最佳状态。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">🧥</div>
-                    <h3>外套</h3>
-                    <div class="item-details">
-                        <p class="item-name">风衣/针织开衫</p>
-                        <p class="item-reason"><strong>理由：</strong>春秋季节一件优雅的风衣能 instantly 提升气质，选择卡其色或浅灰色经典款。冬季选择质感好的呢子大衣或柔软的针织开衫。男士可选择休闲西装外套或皮夹克。外套不仅保暖，更是整体造型的点睛之笔，选择能展现个人风格的款式。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👠</div>
-                    <h3>鞋子</h3>
-                    <div class="item-details">
-                        <p class="item-name">细跟鞋/精致乐福鞋</p>
-                        <p class="item-reason"><strong>理由：</strong>女士选择3-7厘米的细跟鞋，拉长腿部线条的同时保持优雅姿态，裸色或黑色百搭。如果不习惯穿高跟，精致的乐福鞋或尖头平底鞋也是不错的选择。男士选择干净的休闲皮鞋或小白鞋。确保鞋子舒适，因为约会可能需要长时间行走。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 派对穿搭 -->
-        <section id="party" class="scene-section">
-            <div class="scene-header">
-                <h2>派对穿搭</h2>
-                <p class="scene-desc">闪耀夺目，成为焦点</p>
-            </div>
-            
-            <div class="outfit-grid">
-                <div class="outfit-item">
-                    <div class="item-icon">💎</div>
-                    <h3>首饰</h3>
-                    <div class="item-details">
-                        <p class="item-name">闪亮饰品/夸张耳环</p>
-                        <p class="item-reason"><strong>理由：</strong>派对是展现个性的舞台，大胆选择闪亮的饰品！水晶项链、水钻耳环、金属手镯都能让你在灯光下闪耀。可以选择一两件夸张的单品作为焦点，其他饰品保持简约。男士可选择有设计感的袖扣或项链，增添时尚感。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👗</div>
-                    <h3>上衣/连衣裙</h3>
-                    <div class="item-details">
-                        <p class="item-name">亮片上衣/派对连衣裙</p>
-                        <p class="item-reason"><strong>理由：</strong>女士选择带有亮片、金属光泽或特殊剪裁的上衣，或一条性感的派对连衣裙。小黑裙是永恒经典，也可以大胆尝试红色、金色、宝蓝等鲜艳颜色。男士选择有质感的修身衬衫，可选择丝质或带有微妙光泽的面料，解开一两颗扣子增添随性魅力。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👖</div>
-                    <h3>下装</h3>
-                    <div class="item-details">
-                        <p class="item-name">皮裤/缎面裙</p>
-                        <p class="item-reason"><strong>理由：</strong>女士可选择修身皮裤展现酷感，或缎面半身裙展现优雅性感。高腰款式能拉长腿部比例。男士选择修身西裤或深色牛仔裤，避免过于休闲的运动裤。考虑派对氛围，选择有光泽感或特殊材质的面料，让你在人群中脱颖而出。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">🧥</div>
-                    <h3>外套</h3>
-                    <div class="item-details">
-                        <p class="item-name">亮片外套/皮草披肩</p>
-                        <p class="item-reason"><strong>理由：</strong>派对外套是造型的关键！一件亮片西装外套或金属光泽的夹克能让简单的内搭瞬间升级。女士可选择人造皮草披肩或斗篷，增添奢华感。男士选择修身西装外套或皮夹克。考虑到派对室内可能较热，选择方便穿脱的款式，内搭也要精心搭配。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👠</div>
-                    <h3>鞋子</h3>
-                    <div class="item-details">
-                        <p class="item-name">高跟鞋/亮面皮鞋</p>
-                        <p class="item-reason"><strong>理由：</strong>女士选择细高跟鞋，款式可以大胆一些——绑带、金属装饰、亮面材质都很适合派对。颜色可选择与服装呼应或对比的亮色。男士选择亮面皮鞋或切尔西靴，保持鞋面干净光亮。派对可能需要长时间站立或跳舞，建议选择有防水台或粗跟的款式，兼顾美观与舒适。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 玩耍穿搭 -->
-        <section id="play" class="scene-section">
-            <div class="scene-header">
-                <h2>玩耍穿搭</h2>
-                <p class="scene-desc">活力四射，舒适自在</p>
-            </div>
-            
-            <div class="outfit-grid">
-                <div class="outfit-item">
-                    <div class="item-icon">💎</div>
-                    <h3>首饰</h3>
-                    <div class="item-details">
-                        <p class="item-name">运动手环/防水手表</p>
-                        <p class="item-reason"><strong>理由：</strong>玩耍时首饰以实用为主，运动手环既能计步又能搭配运动装。防水手表适合水上活动或出汗较多的场景。避免佩戴贵重或易勾挂的首饰，以免在活动中损坏或受伤。简约的硅胶手环或发带也是不错的点缀。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👕</div>
-                    <h3>上衣</h3>
-                    <div class="item-details">
-                        <p class="item-name">速干T恤/运动背心</p>
-                        <p class="item-reason"><strong>理由：</strong>选择透气速干的运动面料，出汗后能快速蒸发保持干爽。亮色（荧光黄、桃红、天蓝）的运动T恤或背心不仅活力四射，在户外活动时也更安全。考虑活动类型，如果是登山或户外徒步，选择长袖速干衣防晒防虫。宽松但不拖沓的版型，确保活动自如。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👖</div>
-                    <h3>裤子</h3>
-                    <div class="item-details">
-                        <p class="item-name">运动裤/速干短裤</p>
-                        <p class="item-reason"><strong>理由：</strong>根据活动强度选择裤长，跑步或健身可选速干短裤，户外徒步选择运动长裤。选择带有弹性腰带和侧边口袋的款式，方便放置手机或小物件。颜色可与上衣搭配，形成活力运动套装。避免棉质裤子，出汗后会贴在身上且不易干。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">🧥</div>
-                    <h3>外套</h3>
-                    <div class="item-details">
-                        <p class="item-name">防风外套/皮肤衣</p>
-                        <p class="item-reason"><strong>理由：</strong>户外活动必备一件轻便防风外套，应对早晚温差或突发风雨。皮肤衣轻薄便携，防晒又防风，是春夏户外活动的好选择。冬季选择保暖透气的抓绒外套或软壳衣。选择明亮颜色或带有反光条的款式，增加户外活动的安全性。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👟</div>
-                    <h3>鞋子</h3>
-                    <div class="item-details">
-                        <p class="item-name">运动鞋/户外鞋</p>
-                        <p class="item-reason"><strong>理由：</strong>根据活动类型选择合适的鞋子：跑步选缓震好的跑鞋，徒步选支撑性强的户外鞋，健身选稳定的训练鞋。确保鞋子合脚，建议比平时大半码，留出活动空间。袜子选择专业运动袜，吸汗防滑避免磨脚。旧鞋比新鞋更适合长时间活动，提前磨合好新鞋。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 游戏穿搭 -->
-        <section id="game" class="scene-section">
-            <div class="scene-header">
-                <h2>游戏穿搭</h2>
-                <p class="scene-desc">个性潮流，展现电竞风格</p>
-            </div>
-            
-            <div class="outfit-grid">
-                <div class="outfit-item">
-                    <div class="item-icon">💎</div>
-                    <h3>首饰</h3>
-                    <div class="item-details">
-                        <p class="item-name">电竞风配饰/潮牌项链</p>
-                        <p class="item-reason"><strong>理由：</strong>游戏穿搭可以大胆展现个性，选择带有游戏元素的配饰如像素风格项链、游戏手柄造型耳钉等。潮牌金属项链或皮革手链增添街头感。男士可选择有设计感的戒指或手链。避免佩戴影响操作的首饰，如过长的项链或易勾挂的手环。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👕</div>
-                    <h3>上衣</h3>
-                    <div class="item-details">
-                        <p class="item-name">潮牌T恤/连帽卫衣</p>
-                        <p class="item-reason"><strong>理由：</strong>选择印有游戏IP、动漫元素或潮牌logo的T恤，展现个人喜好。连帽卫衣是电竞少年的标配，黑色、深灰、酒红色都很有游戏感。oversize版型舒适自在，适合长时间坐姿。考虑直播或拍照效果，选择颜色鲜艳或有特色设计的款式，在镜头前更出彩。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👖</div>
-                    <h3>裤子</h3>
-                    <div class="item-details">
-                        <p class="item-name">工装裤/束脚运动裤</p>
-                        <p class="item-reason"><strong>理由：</strong>工装裤多口袋设计实用又有型，黑色或卡其色百搭。束脚运动裤舒适休闲，搭配运动鞋很有运动感。侧边条纹或logo设计增添潮流元素。选择弹性好的面料，久坐不紧绷。避免过于紧身的牛仔裤，长时间游戏会不舒服。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">🧥</div>
-                    <h3>外套</h3>
-                    <div class="item-details">
-                        <p class="item-name">电竞队服外套/潮牌夹克</p>
-                        <p class="item-reason"><strong>理由：</strong>一件电竞战队外套或带有游戏元素的夹克是游戏穿搭的灵魂。飞行员夹克、棒球服外套都很有电竞风格。颜色选择黑、白、红等经典电竞配色。如果参加线下活动或比赛，选择辨识度高的款式，成为焦点。日常游戏选择舒适的拉链卫衣即可。</p>
-                    </div>
-                </div>
-
-                <div class="outfit-item">
-                    <div class="item-icon">👟</div>
-                    <h3>鞋子</h3>
-                    <div class="item-details">
-                        <p class="item-name">潮牌运动鞋/老爹鞋</p>
-                        <p class="item-reason"><strong>理由：</strong>选择热门潮牌运动鞋或复古老爹鞋，黑白、灰、撞色款式都很适合。高帮款式更有街头感，低帮简约百搭。考虑游戏场景，鞋子主要是搭配整体风格，舒适度也很重要——毕竟线下比赛或聚会可能需要长时间站立。保持鞋子干净，一双脏鞋会破坏整体潮感。</p>
-                    </div>
-                </div>
+            <div class="outfit-grid" id="outfitGrid">
+                <!-- 由JavaScript动态生成 -->
             </div>
         </section>
     </main>
+
+    <!-- 穿搭数据存储区 -->
+    <script id="outfitData" type="application/json">
+    {
+        "female": {
+            "teen": {
+                "daily": {
+                    "options": [
+                        {
+                            "name": "青春活力风",
+                            "subtitle": "适合学生党日常上课",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "卡通发夹/彩色手链",
+                                    "reason": "青少年时期可以大胆尝试可爱元素，卡通图案的发夹或彩色编织手链能展现青春活力。价格亲民，款式多样，即使弄丢也不心疼。避免选择过于成熟或贵重的首饰，保持学生气息。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "连帽卫衣/卡通印花T恤",
+                                    "reason": "连帽卫衣是学生党的标配，选择明亮的颜色（粉色、浅蓝、鹅黄）或可爱的卡通印花。面料选择柔软的纯棉或加绒款，舒适又保暖。oversize版型流行又舒适，搭配紧身裤显腿长。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "紧身牛仔裤/运动束脚裤",
+                                    "reason": "紧身牛仔裤+oversize上衣是经典的学生穿搭，显腿细又有活力。运动束脚裤则更舒适，适合体育课或课外活动。选择高腰款式，拉长腿部比例。颜色以牛仔蓝、黑色、灰色为主，百搭不出错。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "牛仔外套/棒球服",
+                                    "reason": "牛仔外套自带青春气息，搭配卫衣或T恤都很合适。棒球服则更有运动感，背后的数字或logo增添校园风格。选择适中厚度，春秋可穿。颜色选择经典的牛仔蓝或黑白撞色，时尚又耐脏。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "小白鞋/帆布鞋/老爹鞋",
+                                    "reason": "小白鞋干净清爽，几乎能搭配所有学生装。帆布鞋（匡威、Vans款）价格亲民，款式多样，是学生党最爱。老爹鞋则更有潮流感，增高又舒适。选择鞋底柔软的款式，适应校园内长时间行走。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "简约清新风",
+                            "subtitle": "适合喜欢素雅风格的女生",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "细银项链/小耳钉",
+                                    "reason": "简约风格的首饰更显气质，细银链或小珍珠耳钉低调不张扬。适合学校环境，不会过于花哨。选择不易过敏的材质（纯银、医用钢），青少年皮肤敏感需要注意。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "基础款T恤/针织开衫",
+                                    "reason": "基础款纯色T恤（白、米白、浅灰）是简约风格的核心，单穿或内搭都很棒。春秋外搭一件针织开衫（米色、浅粉、浅蓝），温柔又保暖。选择合身但不紧绷的版型，展现青春身材但不过分暴露。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "name": "A字半身裙/阔腿裤",
+                                    "reason": "A字半身裙（及膝长度）青春又淑女，搭配T恤或衬衫都很合适。阔腿裤则舒适随性，走路带风。颜色选择浅色系（米色、卡其、浅蓝）或基础色（黑、白、灰）。避免过于紧身或暴露的款式，符合学生身份。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "短款风衣/针织外套",
+                                    "reason": "短款风衣（卡其色、浅灰色）利落又时尚，适合青少年身材，不会显老气。针织外套则更温柔，搭配连衣裙很好看。选择长度在胯部左右的款式，优化身材比例。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "乐福鞋/小皮鞋/玛丽珍鞋",
+                                    "reason": "乐福鞋和小皮鞋自带学院风，搭配裙子或裤子都很有学生气质。玛丽珍鞋则更甜美复古。选择低跟或平跟款式，适合青少年穿着。颜色以黑色、棕色、酒红色为主，经典百搭。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "运动休闲风",
+                            "subtitle": "适合爱运动的活力少女",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "运动手环/发带",
+                                    "reason": "运动风格的配饰实用又时尚，智能手环既能看时间又能计步。宽版发带不仅能固定碎发，还能为运动造型增色。选择亮色或有logo的款式，增添运动气息。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "速干运动T恤/露腰短款上衣",
+                                    "reason": "速干面料的运动T恤适合运动后出汗，透气又快干。露腰短款上衣（搭配高腰裤）流行又性感，展现青春好身材。选择亮色（荧光粉、柠檬黄、天蓝）或黑白基础色。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "运动leggings/工装裤",
+                                    "reason": "运动leggings（瑜伽裤）舒适又显腿型，是运动风穿搭的必备。侧边条纹或logo设计更有潮流感。工装裤则酷感十足，多口袋设计实用又有个性。选择高腰款式，优化身材比例。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "运动外套/防风衣",
+                                    "reason": "运动品牌的外套（Nike、Adidas等）自带运动气息，拉链或套头款都很适合。防风衣轻薄便携，适合户外活动。选择oversize版型，内搭短款上衣形成层次感。颜色以黑、白、灰或品牌标志性颜色为主。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "老爹鞋/气垫跑鞋/篮球鞋",
+                                    "reason": "老爹鞋厚底增高又有潮流感，是运动风穿搭的热门选择。气垫跑鞋舒适减震，适合跑步等运动。篮球鞋则更有街头感，搭配运动装很酷。选择热门款式或经典配色，展现潮流品味。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "business": {
+                    "options": [
+                        {
+                            "name": "学生面试装",
+                            "subtitle": "适合实习、兼职面试",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "简约手表/小耳钉",
+                                    "reason": "青少年面试首饰宜简不宜繁，一块普通石英手表显示时间观念。小耳钉（珍珠或小钻）增添精致感但不张扬。避免佩戴夸张或非主流首饰，保持专业稳重的第一印象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "白衬衫/简约雪纺衫",
+                                    "reason": "一件干净的白衬衫是面试必备，选择合身版型，避免过于宽松或紧身。雪纺衫则更柔和，选择米白、浅蓝等基础色。领口选择V领或小翻领，展现颈部线条但不过分暴露。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "name": "及膝西装裙/西裤",
+                                    "reason": "及膝A字裙或直筒裙是安全选择，展现专业又不失女性气质。西裤则更干练，选择垂坠感好的面料。颜色以黑、藏青、深灰为主，避免鲜艳颜色或花哨图案。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "小西装外套/针织开衫",
+                                    "reason": "一件合身的小西装外套能瞬间提升专业感，选择黑、藏青或浅灰色。如果没有西装外套，一件简约的针织开衫（黑、米白）也能起到类似作用。选择适中厚度，室内空调房也适用。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "name": "低跟皮鞋/粗跟鞋",
+                                    "reason": "选择3-5厘米的低跟或粗跟鞋，黑色或裸色最安全。如果不习惯穿高跟鞋，简约的尖头平底鞋也可以接受。确保鞋子干净，没有破损或明显污渍。避免运动鞋、凉鞋或过于花哨的款式。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "date": {
+                    "options": [
+                        {
+                            "name": "初恋甜美风",
+                            "subtitle": "适合校园约会、初次见面",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "蝴蝶结发饰/珍珠项链",
+                                    "reason": "蝴蝶结发夹或发带增添甜美可爱气质，符合初恋感觉。细款珍珠项链温柔又有气质，不张扬但有细节。选择粉色、白色、米色等柔和颜色，避免夸张或成熟款式。"
+                                },
+                                "top": {
+                                    "icon": "👚",
+                                    "name": "娃娃领衬衫/针织衫",
+                                    "reason": "娃娃领设计自带减龄效果，白色或浅粉色都很甜美。针织衫选择柔软材质，淡粉、鹅黄、浅蓝等马卡龙色系很适合约会。可以选择有小细节设计的款式，如蕾丝袖口、荷叶边等。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "name": "百褶裙/A字连衣裙",
+                                    "reason": "百褶裙青春又灵动，走路时裙摆飘动很有少女感。A字连衣裙（及膝长度）温柔又显瘦，单穿或外搭开衫都很适合。选择格子图案、小碎花或纯色，颜色以浅色系为主。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "针织开衫/短款外套",
+                                    "reason": "一件柔软的针织开衫（米色、浅粉、白色）温柔又保暖，室内外穿脱方便。短款牛仔外套或小西装则更利落，优化身材比例。选择适中厚度，根据季节灵活搭配。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "name": "玛丽珍鞋/低跟圆头鞋",
+                                    "reason": "玛丽珍鞋复古又甜美，搭配裙子很有少女感。低跟圆头鞋舒适又可爱，适合长时间约会行走。选择米色、黑色、酒红色或裸色，避免细高跟或过于成熟的款式。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "party": {
+                    "options": [
+                        {
+                            "name": "青春闪耀风",
+                            "subtitle": "适合生日派对、同学聚会",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "亮片发箍/大耳环",
+                                    "reason": "派对是展现个性的好时机，亮片或金属发箍能瞬间提升气场。夸张的大耳环（圆环、几何形状）时尚又上镜。选择金色、银色或与服装呼应的颜色，大胆尝试平时不敢戴的款式。"
+                                },
+                                "top": {
+                                    "icon": "👗",
+                                    "name": "亮片上衣/露肩连衣裙",
+                                    "reason": "派对穿搭可以大胆一些，亮片或金属光泽的上衣在灯光下很闪耀。露肩或一字肩设计展现优美肩线，性感但不过分暴露。选择黑色、红色、金色或宝蓝色，成为派对焦点。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "皮裤/缎面裙",
+                                    "reason": "修身皮裤酷感十足，搭配闪亮上衣形成对比。缎面半身裙（高腰设计）优雅又有光泽感。选择黑色、酒红或墨绿色，与上衣搭配协调。避免过于休闲的款式，如运动裤。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "小西装/皮草外套",
+                                    "reason": "一件修身的小西装外套（黑、红、金）能中和性感，增添干练气质。人造皮草外套或披肩则奢华感十足，适合冬季派对。考虑派对室内可能较热，选择方便穿脱的款式。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "name": "细高跟鞋/亮片鞋",
+                                    "reason": "细高跟鞋拉长腿部线条，展现女性魅力。亮片或金属光泽的鞋子与上衣呼应。选择5-8厘米的跟高，太高可能影响活动。如果不习惯穿高跟，选择粗跟或防水台款式。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "play": {
+                    "options": [
+                        {
+                            "name": "活力运动风",
+                            "subtitle": "适合户外运动、游乐场",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "运动手环/发带",
+                                    "reason": "户外活动首饰以实用为主，运动手环或智能手表方便看时间和计步。宽版发带固定碎发，运动时不碍事。避免佩戴贵重或易勾挂的首饰，以免在活动中损坏。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "速干T恤/运动背心",
+                                    "reason": "选择透气速干的运动面料，出汗后不粘身。亮色（荧光黄、桃红、天蓝）在户外更安全，拍照也好看。如果是夏季，选择无袖或背心款式更凉爽。春秋选择长袖速干衣防晒防虫。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "运动短裤/leggings",
+                                    "reason": "运动短裤（带内衬）舒适透气，适合夏季活动。运动leggings（瑜伽裤）则更保暖，适合春秋或需要防蚊虫的场合。选择高腰款式，运动时不滑落。侧面口袋方便放置手机或小物件。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "防风外套/皮肤衣",
+                                    "reason": "户外必备一件轻便防风外套，应对早晚温差或突发风雨。皮肤衣轻薄便携，防晒又防风，是春夏户外活动的好选择。选择明亮颜色或带有反光条的款式，增加安全性。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "运动鞋/户外鞋",
+                                    "reason": "根据活动类型选择合适的鞋子：跑步选缓震好的跑鞋，徒步选支撑性强的户外鞋。确保鞋子合脚，建议比平时大半码，留出活动空间。袜子选择专业运动袜，吸汗防滑避免磨脚。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "game": {
+                    "options": [
+                        {
+                            "name": "电竞少女风",
+                            "subtitle": "适合电竞活动、游戏聚会",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "游戏周边配饰/潮牌项链",
+                                    "reason": "游戏活动可以大胆展现个性，选择印有游戏元素的配饰（如塞尔达三角力量、宝可梦精灵球等）。潮牌金属项链或皮革手链增添街头感。避免佩戴影响操作的首饰，如过长的项链。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "游戏周边T恤/连帽卫衣",
+                                    "reason": "一件印有喜爱游戏角色或logo的T恤是电竞活动的标配。oversize连帽卫衣舒适又有潮流感，黑、白、灰或游戏主题色都很适合。如果是线下活动，选择颜色鲜艳或有特色设计的款式，拍照更出彩。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "工装裤/束脚运动裤",
+                                    "reason": "工装裤多口袋设计实用又有型，可以放置手机、充电宝等。侧边条纹或logo设计的束脚运动裤舒适又有运动感。选择黑色、深灰或卡其色，与上衣搭配协调。避免过于紧身的款式，长时间坐姿会不舒服。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "棒球服外套/潮牌夹克",
+                                    "reason": "棒球服外套自带运动青春气息，搭配T恤或卫衣都很适合。潮牌夹克则更有个性，展现时尚品味。选择oversize版型，内搭短款上衣形成层次感。颜色以黑、白、灰或撞色设计为主。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "老爹鞋/潮牌运动鞋",
+                                    "reason": "老爹鞋厚底增高又有潮流感，是电竞少女的热门选择。热门潮牌运动鞋（AJ、Yeezy等）或经典款式都很适合。保持鞋子干净，一双脏鞋会破坏整体潮感。选择舒适的款式，线下活动可能需要长时间站立。"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "young": {
+                "daily": {
+                    "sceneInfo": {
+                        "title": "日常穿搭",
+                        "desc": "舒适自在，轻松应对日常生活"
+                    },
+                    "options": [
+                        {
+                            "name": "经典休闲风",
+                            "subtitle": "永不过时的日常选择",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约银饰/细金链",
+                                    "reason": "日常穿搭追求简约不张扬，细金链或简约银饰能够增添精致感而不显夸张。适合办公室、购物、咖啡等多种日常场合，与休闲装或商务休闲装都能完美搭配。选择不易褪色的优质材质，一件好的首饰可以佩戴多年。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "基础款T恤/简约衬衫",
+                                    "reason": "基础款T恤（白色、灰色、黑色）是百搭神器，单穿或内搭都很适合。选择100%纯棉或高品质棉混纺面料，柔软亲肤且不易变形。简约衬衫（棉麻材质）则适合稍正式的日常场合，如办公室或商务会议。建议多备几件不同颜色的基础款，轻松应对各种搭配需求。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "直筒牛仔裤/休闲裤",
+                                    "reason": "直筒牛仔裤是日常穿搭的经典选择，修饰腿型且百搭。选择中高腰设计，优化身材比例。休闲裤（卡其色、藏青色）则更显利落，适合需要稍正式感的日常场合。选择修身但不紧绷的版型，兼顾美观与舒适度。建议投资一两件品质好的牛仔裤，耐穿且版型更优。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "牛仔外套/休闲西装",
+                                    "reason": "牛仔外套自带休闲随性气质，与T恤、牛仔裤搭配形成经典美式风格。选择经典牛仔蓝或黑色，避免过度水洗或花哨设计。休闲西装则提升整体气质，适合日常办公或商务会面。选择面料挺括但不僵硬的款式，单排两粒扣最为经典实用。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "小白鞋/休闲板鞋",
+                                    "reason": "小白鞋是永恒的经典，几乎能与任何日常穿搭完美搭配，既舒适又时尚。选择真皮或优质人造革面料，更容易清洁保养。休闲板鞋则更具运动感，适合活泼的日常活动。选择质量好、鞋底柔软的款式，确保长时间行走也不累脚。建议准备两双轮换穿着，延长鞋子寿命。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "轻熟优雅风",
+                            "subtitle": "适合刚入职场的年轻人",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "珍珠项链/简约手表",
+                                    "reason": "一条细款珍珠项链或小颗珍珠耳钉能瞬间提升优雅气质，适合轻熟风格。一块简约金属表带手表（玫瑰金或银色）既看时间又彰显品味。避免过于花哨或卡通的款式，保持简约精致。投资几件品质首饰，可以从20岁戴到40岁。"
+                                },
+                                "top": {
+                                    "icon": "👚",
+                                    "category": "上衣",
+                                    "name": "真丝衬衫/针织衫",
+                                    "reason": "一件基础款真丝衬衫（白、米白、浅粉）是轻熟风格的必备，质感高级且显气质。选择经典翻领或V领设计，单穿或内搭西装都很适合。针织衫选择柔软亲肤的材质（羊绒或美利奴羊毛混纺），春秋外搭或冬季内搭都很棒。建议选择经典剪裁和中性颜色，穿着年限更长。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "category": "下装",
+                                    "name": "及膝半身裙/烟管裤",
+                                    "reason": "及膝A字裙或铅笔裙是轻熟风格的代表，展现女性气质但不过分性感。选择垂坠感好的面料（羊毛混纺、西装料），颜色以黑、藏青、深灰、米色为主。烟管裤则干练利落，修饰腿型且百搭。选择高腰设计，优化身材比例。避免过于暴露或紧身的款式，保持优雅得体。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "风衣/小西装",
+                                    "reason": "一件经典卡其色风衣是轻熟风格的必备单品，春秋季节使用率极高。选择长度过膝、版型修身但不紧绷的款式，系上腰带显腰身。小西装则更正式一些，选择黑、藏青或浅灰色，单排扣设计最为经典。投资一件品质好的风衣或西装，可以穿很多年且不过时。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "category": "鞋子",
+                                    "name": "低跟鞋/乐福鞋",
+                                    "reason": "3-5厘米的低跟鞋是轻熟风格的理想选择，既提升气质又保证舒适度。尖头款式显腿长，裸色或黑色百搭。乐福鞋则更休闲一些，真皮材质质感高级，搭配裤子或裙子都很适合。建议选择真皮鞋底或加软垫的款式，长时间穿着也不累。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "潮流街头风",
+                            "subtitle": "适合喜欢展现个性的年轻人",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "多层项链/夸张耳环",
+                                    "reason": "街头风格可以大胆尝试叠戴项链，不同长度和材质的项链组合形成层次感。夸张的大耳环或几何形状耳环是街头风的标志性配饰。选择金色、银色或黑色，与整体风格协调。可以尝试混搭不同风格的首饰，创造独特个人风格。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "潮牌T恤/oversize卫衣",
+                                    "reason": "一件有设计感的潮牌T恤或oversize卫衣是街头风格的核心。选择印有独特图案、logo或标语的款式，展现个性态度。颜色可以大胆尝试荧光色、撞色或做旧效果。oversize版型是街头风的关键，搭配紧身裤形成对比。建议关注一些小众设计师品牌或潮牌，避免撞衫。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "工装裤/破洞牛仔裤",
+                                    "reason": "工装裤多口袋设计实用又有造型感，是街头风的热门单品。选择黑色、卡其色或军绿色，高腰款式优化比例。破洞或水洗做旧的牛仔裤自带随性酷感，搭配简单T恤就很有型。可以尝试束脚、直筒或阔腿等不同版型，找到最适合自己的。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "飞行员夹克/潮牌外套",
+                                    "reason": "经典的MA-1飞行员夹克是街头风的永恒单品，黑色或军绿色都很百搭。选择oversize版型，内搭连帽卫衣形成层次感。潮牌外套或设计师联名款则更具个性，彰显时尚品味。也可以尝试皮夹克、牛仔外套等其他款式，丰富穿搭选择。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "老爹鞋/潮牌运动鞋",
+                                    "reason": "厚底老爹鞋是街头风的标志性鞋款，增高又有造型感。热门潮牌运动鞋（AJ、Yeezy、New Balance等）或经典复古款式都是不错的选择。可以尝试袜子外露的穿搭方式，增添层次感。建议关注限量款或联名款，收藏价值和穿搭价值兼具。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "business": {
+                    "sceneInfo": {
+                        "title": "商务穿搭",
+                        "desc": "专业干练，展现职场魅力"
+                    },
+                    "options": [
+                        {
+                            "name": "经典商务风",
+                            "subtitle": "适合正式会议、客户会面",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表/低调袖扣",
+                                    "reason": "商务场合首饰宜精不宜多，一块优质金属手表（钢表带或皮表带）既能看时间又彰显品味。选择简约表盘设计，避免过多功能或花哨装饰。如果穿法式袖口衬衫，一对低调的金属袖扣能增添精致细节。避免佩戴过于夸张或贵重的首饰，保持专业稳重。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "高支棉衬衫/丝质blouse",
+                                    "reason": "男士选择80支以上高支棉定制衬衫，面料挺括不易皱，领口袖口干净利落。颜色以白色、浅蓝色为主，细条纹或小方格也可接受。女士选择丝质或高品质棉麻blouse，颜色以白、米白、藏青、深灰为主。确保尺码合身，过于宽松或紧绷都会影响专业形象。建议准备5-7件衬衫轮换，保持每天整洁。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "同色系西裤/西装裙",
+                                    "reason": "男士选择与西装同色系的西裤，裤长刚好盖住鞋面，裤线笔直。选择羊毛或羊毛混纺面料，垂坠感好且不易皱。女士可选择西裤或及膝西装裙，裙长不宜过短（膝盖上2-3厘米为限）。裙子选择A字或直筒版型，避免包臀过于紧身。建议准备2-3条不同颜色的西裤，与西装外套搭配。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "定制西装/品质大衣",
+                                    "reason": "一套合身的定制西装是职场必备，颜色以藏青、深灰、黑色为主，面料选择羊毛或羊毛混纺（Super 100s以上为佳）。单排两粒扣是最经典安全的选择。冬季可外搭一件品质大衣（羊绒或羊毛混纺），长度过膝，颜色与西装协调。投资一件好的西装外套，能穿多年且提升整体气质。建议至少准备2-3套不同颜色的西装。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "牛津鞋/尖头高跟鞋",
+                                    "reason": "男士选择黑色或深棕色牛津鞋，鞋面光洁无过多装饰，搭配同色系袜子（棉或羊毛混纺）。三接头或Cap-Toe款式最为经典正式。女士选择3-5厘米的尖头高跟鞋，颜色以黑、裸色为主，鞋跟不宜过细过高（粗跟更稳）。确保鞋子干净擦亮，破旧的鞋子会破坏整体专业形象。建议准备两双轮换，延长使用寿命。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "商务休闲风",
+                            "subtitle": "适合日常办公、创意行业",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约项链/品质手表",
+                                    "reason": "商务休闲风格可以比正式商务稍显个性，但仍需保持专业。女士可选择细款金链或简约吊坠项链，男士保持低调手表即可。避免佩戴过于休闲或夸张的首饰。保持简约精致的原则，一两件足矣。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "针织衫/休闲衬衫",
+                                    "reason": "男士可以选择针织衫（V领或圆领）内搭衬衫，或单穿品质较好的休闲衬衫。颜色可以比正式商务稍丰富，浅紫、墨绿、酒红等都可尝试。女士选择真丝衬衫、针织衫或品质较好的T恤（避免印花过于夸张）。避免过于休闲的款式，如连帽卫衣、牛仔衬衫等（创意行业除外）。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "卡其裤/休闲西裤",
+                                    "reason": "卡其裤（卡其色、藏青、深灰）是商务休闲的理想选择，比牛仔裤正式比西裤休闲。选择修身但不紧绷的版型，面料以斜纹棉布或混纺为主。女士也可选择及膝半身裙或阔腿裤。避免牛仔裤、运动裤等过于休闲的款式，除非公司文化非常宽松。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "休闲西装/风衣",
+                                    "reason": "一件休闲西装（可以选择稍活泼的颜色或面料）能瞬间提升专业感，但比正式西装柔和。选择单排扣设计，可以不系扣穿着更随性。风衣也是商务休闲的好选择，卡其色或浅灰色经典百搭。避免过于休闲的外套，如牛仔外套、运动外套等。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "乐福鞋/德比鞋",
+                                    "reason": "乐福鞋（真皮材质）既舒适又有品位，一脚蹬设计方便穿脱。颜色以黑色、深棕、酒红为主。德比鞋比牛津鞋稍显休闲，也是不错的选择。女士可以选择低跟鞋或精致的平底鞋。保持鞋子干净整洁，这是专业形象的重要细节。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "创意行业风",
+                            "subtitle": "适合设计、媒体、时尚行业",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "个性首饰/设计师款",
+                                    "reason": "创意行业可以更自由地表达个性，选择有设计感的首饰展现品味。可以尝试几何形状、独特材质或小众设计师品牌。叠戴项链、混搭风格都是可以接受的。但仍需保持一定专业度，避免过于廉价或夸张的款式。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "设计感衬衫/独特面料上衣",
+                                    "reason": "创意行业可以尝试更多设计元素：不对称剪裁、独特面料、有趣的印花等。选择有质感的设计师品牌或小众品牌，展现时尚品味。颜色可以更大胆，墨绿、酒红、紫色、金属色等都可尝试。但仍需避免过于休闲的款式，保持一定专业感。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "阔腿裤/设计感裙装",
+                                    "reason": "阔腿裤（高腰设计）既时尚又有气场，适合创意行业展现个性。可以尝试独特面料（丝绒、缎面、皮革）或设计细节（开叉、不规则裤脚）。女士可以选择设计感裙装（不对称剪裁、独特面料）。避免过于普通或保守的款式，这是展现创意的好机会。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "设计师款外套/独特剪裁西装",
+                                    "reason": "一件有设计感的外套是创意行业的名片，可以选择独特剪裁、面料或颜色。oversize西装、不对称设计、特色面料（丝绒、皮革、金属光泽）都是不错的选择。也可以尝试设计师品牌或先锋品牌的款式。但要确保外套品质感，避免廉价感。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "category": "鞋子",
+                                    "name": "设计师款鞋履/独特款式",
+                                    "reason": "创意行业可以更大胆地选择鞋履：独特跟形、特殊材质、设计师品牌等。女士可以尝试粗跟、异形跟、袜靴等款式。男士可以尝试切尔西靴、沙漠靴或有设计感的皮鞋。颜色也可以更大胆，酒红、墨绿、金属色等。保持鞋子干净完好，这是品质感的体现。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "date": {
+                    "sceneInfo": {
+                        "title": "约会穿搭",
+                        "desc": "优雅迷人，展现个人魅力"
+                    },
+                    "options": [
+                        {
+                            "name": "优雅女人味",
+                            "subtitle": "适合正式约会、晚餐约会",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "精致项链/优雅耳环",
+                                    "reason": "约会时选择精致但不过分华丽的首饰，一条细钻项链或小巧的珍珠耳环能增添温柔气质。可以选择一两件重点饰品，其他保持简约。考虑约会场景：烛光晚餐适合闪耀但不夸张的钻石或水晶，日间约会适合珍珠或简约金属。让对方的注意力集中在你的魅力上，而非首饰。"
+                                },
+                                "top": {
+                                    "icon": "👚",
+                                    "category": "上衣",
+                                    "name": "针织衫/优雅上衣",
+                                    "reason": "女士选择柔软的针织衫或带有细节设计的优雅上衣，颜色以温柔的粉色、米色、浅紫为主。V领或一字肩能展现优美颈部线条，适当露肤增加女性魅力但不过分暴露。选择亲肤柔软的面料（羊绒、真丝、莫代尔），触感舒适也增添亲切感。可以选择有微妙光泽或细节设计的款式，在灯光下更出彩。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "category": "下装",
+                                    "name": "A字裙/包臀裙/修身裤",
+                                    "reason": "女士选择及膝A字裙或包臀裙，展现优雅曲线但不过分暴露。高腰设计拉长腿部比例。修身裤也是不错的选择，搭配高跟鞋显腿长。颜色选择与上衣协调的色系，黑、藏青、米色、酒红等都是安全又优雅的选择。面料选择垂坠感好的材质，走路时灵动飘逸。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "风衣/呢子大衣/针织开衫",
+                                    "reason": "春秋季节一件优雅的风衣能瞬间提升气质，选择卡其色或浅灰色经典款。冬季选择质感好的呢子大衣（驼色、黑色、灰色）或柔软的针织开衫。外套不仅保暖，更是整体造型的点睛之笔。选择能展现个人风格的款式：系带显腰身，oversize随性，短款显高。考虑约会可能需要穿脱，选择内搭也要精心搭配。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "category": "鞋子",
+                                    "name": "细跟鞋/精致乐福鞋",
+                                    "reason": "女士选择3-7厘米的细跟鞋，拉长腿部线条的同时保持优雅姿态。裸色或黑色百搭，与服装呼应的颜色更协调。如果不习惯穿高跟，精致的乐福鞋或尖头平底鞋也是不错的选择。确保鞋子舒适，因为约会可能需要长时间行走。新鞋建议提前穿几天磨合，避免约会时磨脚。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "休闲随性风",
+                            "subtitle": "适合日间约会、户外活动",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约首饰/自然材质",
+                                    "reason": "休闲约会可以选择更随性的首饰，如皮革手链、木质串珠或简约金属饰品。避免过于华丽或正式的款式，保持轻松自在的感觉。可以选择有纪念意义或个人故事的小饰品，成为话题切入点。自然材质（木质、皮革、贝壳）与休闲风格更搭。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "简约T恤/休闲衬衫",
+                                    "reason": "选择质感好的基础款T恤（白、灰、黑或柔和彩色），单穿或内搭都很适合。休闲衬衫（棉麻、牛津纺材质）随性又有品味，解开一两颗扣子增添性感。选择合身但不紧绷的版型，展现身材但不过分暴露。颜色可以选择柔和的马卡龙色或莫兰迪色，温柔又有好感。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "下装",
+                                    "name": "牛仔裤/休闲裤",
+                                    "reason": "一条版型好的牛仔裤是休闲约会的神器，直筒或微喇版型修饰腿型。选择中高腰设计，优化身材比例。颜色以深蓝、黑色或浅蓝为主，避免过度破洞或花哨设计。休闲裤（卡其、米色、灰色）也是不错的选择，更显利落。确保裤子干净整洁，没有明显污渍或破损。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "牛仔外套/休闲西装/皮衣",
+                                    "reason": "牛仔外套自带休闲随性气质，与T恤、牛仔裤搭配形成经典美式风格。休闲西装则提升气质，适合稍正式的休闲约会。皮衣（真皮或优质人造皮）增添酷感，展现个性魅力。选择适合季节和场合的款式，颜色以经典色为主。外套是整体造型的关键，可以改变整个穿搭的风格走向。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "小白鞋/休闲板鞋/切尔西靴",
+                                    "reason": "小白鞋干净清爽，几乎能与任何休闲穿搭完美搭配。选择真皮或优质人造革，更容易清洁保养。休闲板鞋或帆布鞋则更具青春活力。切尔西靴（真皮材质）则更显品味，搭配牛仔裤很有型。确保鞋子干净，一双脏鞋会破坏整体好感度。选择舒适的款式，休闲约会可能需要大量行走。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "甜美可爱风",
+                            "subtitle": "适合校园约会、初次见面",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "蝴蝶结发饰/珍珠首饰",
+                                    "reason": "甜美风格可以选择可爱元素的首饰，蝴蝶结发夹或发带增添少女感。细款珍珠项链或耳钉温柔又有气质。选择粉色、白色、米色等柔和颜色。避免过于成熟或夸张的款式，保持青春可爱的感觉。可以选择带有小钻或水晶的款式，在光线下微微闪耀。"
+                                },
+                                "top": {
+                                    "icon": "👚",
+                                    "category": "上衣",
+                                    "name": "娃娃领衬衫/荷叶边针织衫",
+                                    "reason": "娃娃领设计自带减龄效果，白色或浅粉色都很甜美。荷叶边、蕾丝、蝴蝶结等细节元素增添女性魅力。针织衫选择柔软材质，淡粉、鹅黄、浅蓝等马卡龙色系很适合约会。可以选择有小细节设计的款式，如蕾丝袖口、木耳边等。避免过于成熟或暴露的款式，保持清纯可爱。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "category": "下装",
+                                    "name": "百褶裙/A字连衣裙/背带裙",
+                                    "reason": "百褶裙青春又灵动，走路时裙摆飘动很有少女感。A字连衣裙（及膝长度）温柔又显瘦，单穿或外搭开衫都很适合。背带裙或背带裤减龄效果明显，充满青春气息。选择格子图案、小碎花或纯色，颜色以浅色系为主。面料选择柔软飘逸的材质，增添灵动气质。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "针织开衫/短款外套/牛角扣大衣",
+                                    "reason": "一件柔软的针织开衫（米色、浅粉、白色）温柔又保暖，室内外穿脱方便。短款牛仔外套或小西装则更利落，优化身材比例。牛角扣大衣（驼色、米色）学院风十足，减龄又可爱。选择适中厚度，根据季节灵活搭配。外套颜色选择柔和色系，与整体甜美风格协调。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "category": "鞋子",
+                                    "name": "玛丽珍鞋/低跟圆头鞋/帆布鞋",
+                                    "reason": "玛丽珍鞋复古又甜美，搭配裙子很有少女感。低跟圆头鞋舒适又可爱，适合长时间约会行走。帆布鞋（白色或彩色）青春活力，适合校园或休闲约会。选择米色、黑色、酒红色或裸色，避免细高跟或过于成熟的款式。可以选择带有蝴蝶结或小细节的款式，增添甜美感。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "party": {
+                    "sceneInfo": {
+                        "title": "派对穿搭",
+                        "desc": "闪耀夺目，成为焦点"
+                    },
+                    "options": [
+                        {
+                            "name": "经典优雅风",
+                            "subtitle": "适合正式派对、晚宴",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "精致珠宝/闪亮饰品",
+                                    "reason": "正式派对是佩戴珠宝的好时机，选择钻石、水晶或珍珠等闪耀材质。可以选择一两件重点饰品：一条华丽项链或一对吊灯式耳环，其他保持简约。考虑服装领口：V领适合吊坠项链，一字肩适合耳环或手链。让珠宝成为整体造型的点睛之笔，但不要过于堆砌。"
+                                },
+                                "top": {
+                                    "icon": "👗",
+                                    "category": "上衣/连衣裙",
+                                    "name": "小黑裙/丝质上衣",
+                                    "reason": "经典小黑裙是正式派对的永恒选择，选择简约但有设计感的款式。面料以真丝、缎面或蕾丝为主，展现高级质感。如果选择裤装，搭配一件丝质或缎面上衣（吊带或露肩款式）。颜色可以选择黑、酒红、墨绿、宝蓝或金色。适当露肤（肩线、锁骨、后背）增加女性魅力。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "下装",
+                                    "name": "及膝裙/阔腿裤",
+                                    "reason": "及膝或 midi 长度的连衣裙或半裙是正式派对的安全选择，优雅又得体。阔腿裤（高腰设计）则干练又有气场，适合喜欢裤装的人。面料选择有光泽感的材质（缎面、丝绒），在灯光下更出彩。颜色以黑、藏青、酒红、墨绿为主，金色或银色是大胆选择。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "皮草披肩/呢子大衣",
+                                    "reason": "一件人造皮草披肩或斗篷增添奢华感，适合冬季正式派对。呢子大衣（黑色、驼色、酒红）则更简约优雅。考虑派对室内可能较热，选择方便穿脱的款式。内搭连衣裙要精心搭配，因为可能大部分时间都在室内。外套选择高品质感的款式，提升整体造型档次。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "category": "鞋子",
+                                    "name": "细高跟鞋/缎面鞋",
+                                    "reason": "细高跟鞋是正式派对的理想选择，拉长腿部线条，展现女性魅力。选择缎面、丝绒或漆皮材质，颜色以黑、裸色、酒红或金色为主。鞋跟高度建议5-8厘米，太高可能影响活动。如果不习惯穿高跟，选择粗跟或防水台款式。准备一双舒适的备用鞋，派对结束后更换。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "闪耀派对风",
+                            "subtitle": "适合夜店、主题派对",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "闪亮饰品/夸张耳环",
+                                    "reason": "派对是展现个性的舞台，大胆选择闪亮的饰品！水晶项链、水钻耳环、金属手镯都能让你在灯光下闪耀。可以选择一两件夸张的单品作为焦点（如大耳环或choker），其他饰品保持简约。多层项链或叠戴手链也是不错的选择。金属色（金、银、玫瑰金）与派对风格最搭。"
+                                },
+                                "top": {
+                                    "icon": "👗",
+                                    "category": "上衣/连衣裙",
+                                    "name": "亮片上衣/露肩连衣裙",
+                                    "reason": "派对穿搭可以大胆一些，亮片、金属光泽或特殊剪裁的上衣能让你在灯光下闪耀。露肩、一字肩、深V或露背设计展现性感魅力。连衣裙选择包臀、鱼尾或不对称剪裁，展现身材曲线。颜色可以大胆尝试红色、金色、宝蓝、黑色或银色。面料选择亮片、金属丝、缎面或蕾丝等有光泽感的材质。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "下装",
+                                    "name": "皮裤/缎面裙",
+                                    "reason": "修身皮裤（真皮或优质人造皮）展现酷感，搭配闪亮上衣形成对比。缎面或丝绒半身裙（高腰设计）优雅又有光泽感。选择黑色、酒红、墨绿或金色。迷你裙展现大长腿，midi裙更显优雅。根据个人风格和派对主题选择。避免过于休闲的款式，如运动裤或牛仔裤（除非主题允许）。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "亮片外套/皮草/小西装",
+                                    "reason": "派对外套是造型的关键！一件亮片西装外套或金属光泽的夹克能让简单的内搭瞬间升级。人造皮草外套或披肩增添奢华感，适合冬季派对。小西装（黑色、红色、金色）则中和性感，增添干练气质。考虑到派对室内可能较热，选择方便穿脱的款式，内搭也要精心搭配。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "category": "鞋子",
+                                    "name": "细高跟鞋/亮片鞋",
+                                    "reason": "细高跟鞋拉长腿部线条，展现女性魅力。款式可以大胆一些——绑带、金属装饰、亮面材质或特殊鞋跟都很适合派对。颜色可选择与服装呼应或对比的亮色（红、金、银）。派对可能需要长时间站立或跳舞，建议选择有防水台或粗跟的款式，兼顾美观与舒适。可以准备创可贴备用。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "个性酷感风",
+                            "subtitle": "适合音乐节、潮流派对",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "个性首饰/多层叠戴",
+                                    "reason": "潮流派对可以大胆展现个性，选择有设计感的首饰：choker、多层项链、铆钉元素、几何形状等。可以尝试混搭不同风格和材质，创造独特个人风格。银色、黑色或古铜色与酷感风格更搭。不要害怕夸张，这是展现个性的好机会。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "个性T恤/ crop top",
+                                    "reason": "选择有独特图案、标语或设计的上衣，展现个性态度。Crop top（露腰短款上衣）搭配高腰下装，性感又有潮流感。可以尝试透视、不对称剪裁、金属元素或做旧效果。颜色可以大胆尝试撞色、荧光色或深色系。面料选择可以多样化：皮革、网纱、金属丝等。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "下装",
+                                    "name": "工装裤/皮裤/破洞牛仔裤",
+                                    "reason": "工装裤多口袋设计实用又有造型感，是酷感风格的热门单品。皮裤（修身或阔腿）展现酷感和性感。破洞或水洗做旧的牛仔裤自带随性颓废感。选择黑色、军绿、深灰或牛仔蓝。高腰设计优化身材比例，搭配短款上衣形成层次感。避免过于普通或保守的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "皮夹克/牛仔外套/潮牌外套",
+                                    "reason": "一件经典的黑色皮夹克是酷感风格的必备单品，机车款或oversize都很有型。牛仔外套（做旧、破洞或手绘）则更具青春感。潮牌外套或设计师联名款彰显时尚品味。可以尝试铆钉、流苏、印花等独特设计。选择oversize版型，内搭短款上衣形成层次感。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "厚底靴/马丁靴/潮牌运动鞋",
+                                    "reason": "马丁靴或厚底靴（Dr. Martens款）酷感十足，搭配裙装或裤装都很有型。潮牌运动鞋（AJ、Yeezy等）或老爹鞋则更具街头感。可以尝试袜子外露的穿搭方式，增添层次感。选择黑色、白色或撞色款式。确保鞋子舒适，潮流派对可能需要长时间站立或跳舞。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "play": {
+                    "sceneInfo": {
+                        "title": "玩耍穿搭",
+                        "desc": "活力四射，舒适自在"
+                    },
+                    "options": [
+                        {
+                            "name": "专业运动风",
+                            "subtitle": "适合跑步、健身、球类运动",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "运动手环/防水手表",
+                                    "reason": "运动时首饰以实用为主，运动手环或智能手表方便看时间、计步和监测心率。选择防水款式，适合水上活动或出汗较多的场景。避免佩戴贵重或易勾挂的首饰，以免在运动中损坏或受伤。可以选择有品牌logo的运动发带，固定碎发同时增添运动感。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "速干T恤/运动背心",
+                                    "reason": "选择透气速干的运动面料（涤纶、锦纶混纺），出汗后能快速蒸发保持干爽。亮色（荧光黄、桃红、天蓝）在户外更安全，拍照也好看。夏季选择无袖或背心款式更凉爽，春秋选择长袖速干衣防晒防虫。女生建议选择专业运动内衣，提供良好支撑。选择合身但不紧绷的版型，确保运动自如。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "下装",
+                                    "name": "运动短裤/leggings",
+                                    "reason": "根据运动强度选择裤长：跑步或健身可选速干短裤（带内衬防止走光），户外徒步或秋冬选择运动长裤。运动leggings（瑜伽裤）舒适又显腿型，是运动风穿搭的必备。选择高腰款式，运动时不滑落。侧边口袋方便放置手机或小物件。选择速干、弹性好的面料，避免棉质裤子（出汗后贴身且不易干）。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "防风外套/皮肤衣",
+                                    "reason": "户外活动必备一件轻便防风外套，应对早晚温差或突发风雨。皮肤衣轻薄便携，防晒又防风，是春夏户外活动的好选择。冬季选择保暖透气的抓绒外套或软壳衣。选择明亮颜色或带有反光条的款式，增加户外活动的安全性。选择可收纳款式，方便携带。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "专业运动鞋",
+                                    "reason": "根据运动类型选择合适的鞋子：跑步选缓震好的跑鞋（Asics、Nike、Adidas等），徒步选支撑性强的户外鞋（防水、高帮），健身选稳定的训练鞋，球类选专项运动鞋。确保鞋子合脚，建议比平时大半码，留出活动空间（运动时脚会肿胀）。袜子选择专业运动袜（棉混纺或功能面料），吸汗防滑避免磨脚。新鞋建议提前磨合，避免运动时磨脚。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "休闲户外风",
+                            "subtitle": "适合野餐、郊游、轻度户外活动",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约首饰/自然材质",
+                                    "reason": "休闲户外活动可以选择简约耐用的首饰，皮革手链、木质串珠或布艺发带都很适合。避免佩戴贵重或易损坏的首饰。可以选择有遮阳功能的帽子（棒球帽、宽檐帽），实用又能搭配造型。太阳镜也是必备单品，保护眼睛同时增添时尚感。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "棉质T恤/休闲衬衫",
+                                    "reason": "选择舒适透气的纯棉或棉混纺T恤，颜色以浅色系为主（白、米、浅蓝），反射阳光更凉快。休闲衬衫（棉麻、牛津纺）可以防晒，也可以敞开当外套穿。女生可以选择清新的碎花上衣或条纹款式。选择宽松但不拖沓的版型，活动自如。夏季选择浅色，春秋可以选择稍深的颜色。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "下装",
+                                    "name": "休闲裤/阔腿裤",
+                                    "reason": "休闲裤（卡其、米色、军绿）舒适又实用，多口袋设计方便放小物件。阔腿裤（棉麻、雪纺材质）飘逸透气，适合夏季户外活动。牛仔裤（直筒、修身）也是不错的选择，但避免在炎热天气穿着。女生可以选择及膝半身裙或连体裤，时尚又方便活动。选择舒适透气的面料，避免过于紧绷。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "牛仔外套/休闲外套",
+                                    "reason": "牛仔外套百搭实用，早晚温差大时可以穿。休闲外套（风衣、冲锋衣）适合多变的天气。选择轻便易携带的款式，可以系在腰间或放入包中。颜色以经典色为主，与整体休闲风格协调。根据季节选择厚度：春秋选择适中厚度，夏季可以选择防晒皮肤衣。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "小白鞋/帆布鞋/休闲鞋",
+                                    "reason": "小白鞋干净清爽，搭配任何休闲穿搭都很适合。帆布鞋（匡威、Vans款）青春活力，价格亲民。休闲板鞋或运动鞋舒适耐用。选择鞋底柔软、抓地力好的款式，适应户外不同地形。确保鞋子舒适，户外活动可能需要大量行走。新鞋建议提前穿几天磨合。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "海边度假风",
+                            "subtitle": "适合海边、泳池、热带旅行",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "贝壳首饰/遮阳帽/太阳镜",
+                                    "reason": "海边度假可以选择海洋元素的首饰：贝壳项链、珍珠耳环、编织手绳等。一顶宽檐遮阳帽（草编或布制）既能防晒又能搭配造型，是海边必备。太阳镜保护眼睛免受强烈紫外线伤害，选择偏光镜片看海水更清晰。避免佩戴贵重金属首饰，海水可能导致变色或生锈。"
+                                },
+                                "top": {
+                                    "icon": "👙",
+                                    "category": "上衣/泳衣外搭",
+                                    "name": "比基尼外搭/吊带衫",
+                                    "reason": "海边穿搭以泳衣为核心，外搭选择轻薄飘逸的款式：雪纺开衫、吊带罩衫、露背短款上衣等。选择白色、米色、浅蓝或鲜艳花色，与海边氛围协调。面料选择雪纺、棉麻或透气速干材质。款式可以大胆一些：露背、透视、不对称剪裁等。记得准备一件长袖防晒衣，避免晒伤。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "category": "下装/沙滩裙",
+                                    "name": "沙滩裙/热裤",
+                                    "reason": "一条飘逸的长裙或沙滩裙是海边拍照神器，走路时裙摆飘动很有氛围感。热裤（牛仔或运动面料）方便活动，搭配比基尼上衣很性感。选择雪纺、棉麻或速干面料，颜色选择白色、浅色系或鲜艳印花。高腰设计优化身材比例，拍照更上镜。避免白色或浅色太透的面料。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套/防晒",
+                                    "name": "防晒衣/轻薄开衫",
+                                    "reason": "海边紫外线强烈，一件长袖防晒衣（UPF50+）是必备。选择轻薄透气的面料，即使在炎热天气也不会太闷。颜色选择白色或浅色系，反射阳光。也可以选择一件雪纺或针织开衫，早晚或空调房穿。选择方便穿脱的款式，海边穿脱频繁。"
+                                },
+                                "shoes": {
+                                    "icon": "👡",
+                                    "category": "鞋子",
+                                    "name": "夹脚拖/凉鞋/沙滩鞋",
+                                    "reason": "夹脚拖（人字拖）是海边标配，方便穿脱且不怕水。选择品质好的款式，避免磨脚。凉鞋（真皮或塑胶材质）更时尚一些，搭配裙子很好看。沙滩鞋（涉水鞋）适合礁石多的海滩，保护脚底。避免穿运动鞋或帆布鞋，遇水后难干且磨脚。可以准备两双轮换：一双拖鞋、一双凉鞋。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "game": {
+                    "sceneInfo": {
+                        "title": "游戏穿搭",
+                        "desc": "个性潮流，展现电竞风格"
+                    },
+                    "options": [
+                        {
+                            "name": "经典电竞风",
+                            "subtitle": "适合电竞赛事、线下观赛",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "游戏周边配饰/潮牌项链",
+                                    "reason": "游戏活动可以大胆展现个性，选择印有游戏元素的配饰：像素风格项链、游戏手柄造型耳钉、战队logo手链等。潮牌金属项链或皮革手链增添街头感。男士可选择有设计感的戒指或手链。避免佩戴影响操作的首饰，如过长的项链或易勾挂的手环。可以选择支持的战队周边，表达热爱。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "战队队服/游戏周边T恤",
+                                    "reason": "一件支持的战队队服是电竞赛事的标配，展现归属感和热爱。游戏周边T恤（印有喜爱游戏角色、logo或经典台词）表达个性。选择oversize版型，舒适又有潮流感。颜色以黑、白、灰或战队主题色为主。如果是线下活动或观赛，选择颜色鲜艳或有特色设计的款式，在人群中更显眼。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "工装裤/束脚运动裤",
+                                    "reason": "工装裤多口袋设计实用又有型，可以放置手机、充电宝、耳机等电竞必备物品。侧边条纹或logo设计的束脚运动裤舒适又有运动感。选择黑色、深灰、卡其或军绿色，与上衣搭配协调。选择高腰款式，优化身材比例。避免过于紧身的牛仔裤，长时间坐姿会不舒服。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "战队外套/棒球服",
+                                    "reason": "一件电竞战队外套（出征服、选手同款）是游戏穿搭的灵魂，瞬间识别同好。棒球服外套自带运动青春气息，搭配T恤或卫衣都很适合。选择oversize版型，内搭连帽卫衣形成层次感。颜色以黑、白、灰或战队标志性配色为主。考虑室内空调可能较冷，准备一件外套很有必要。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "老爹鞋/潮牌运动鞋",
+                                    "reason": "老爹鞋厚底增高又有潮流感，是电竞穿搭的热门选择。热门潮牌运动鞋（AJ、Yeezy、New Balance等）或经典复古款式都是不错的选择。也可以选择游戏联名款鞋履，展现深度热爱。保持鞋子干净，一双脏鞋会破坏整体潮感。线下活动可能需要长时间站立，选择舒适的款式。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "潮流街头风",
+                            "subtitle": "适合游戏发布会、行业活动",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "潮牌首饰/设计师款",
+                                    "reason": "游戏行业活动可以更时尚一些，选择潮牌或设计师款首饰展现品味。可以尝试几何形状、独特材质或小众品牌。叠戴项链、混搭风格都是可以接受的。保持一定个性但不过于夸张，行业活动需要兼顾专业度。银色、黑色或古铜色与街头风格更搭。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "潮牌T恤/设计师款上衣",
+                                    "reason": "选择有设计感的潮牌T恤或设计师款上衣，展现时尚品味。可以尝试独特剪裁、面料拼接或趣味印花。oversize版型是街头风的关键，搭配紧身裤形成对比。颜色可以大胆尝试撞色、做旧效果或特殊材质。避免过于普通或廉价的款式，行业活动需要展现品质感。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "阔腿裤/设计感牛仔裤",
+                                    "reason": "阔腿裤（高腰设计）既时尚又有气场，适合展现个性。可以尝试独特面料（丝绒、牛仔、工装布）或设计细节（开叉、不规则裤脚、撞色）。设计感牛仔裤（破洞、拼接、水洗做旧）自带潮流感。选择黑色、深灰、牛仔蓝或撞色。避免过于普通或保守的款式，这是展现个性的好机会。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "潮牌外套/设计师款",
+                                    "reason": "一件有设计感的外套是行业活动的名片，可以选择独特剪裁、面料或颜色。oversize西装、不对称设计、特色面料（丝绒、皮革、金属光泽）都是不错的选择。也可以尝试设计师品牌或先锋品牌的款式。但要确保外套品质感，避免廉价感。颜色选择经典色或大胆撞色。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "设计师款鞋履/限量款",
+                                    "reason": "游戏行业可以更大胆地选择鞋履：热门潮牌、限量款、联名款或设计师品牌。老爹鞋、复古跑鞋、篮球鞋或时尚板鞋都是不错的选择。可以尝试袜子外露的穿搭方式，增添层次感。保持鞋子干净完好，这是品质感的体现。限量款或联名款可以成为话题切入点。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Cosplay元素风",
+                            "subtitle": "适合漫展、主题派对",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "角色同款/主题首饰",
+                                    "reason": "漫展或主题派对可以选择角色同款首饰或主题元素配饰。例如：火影忍者的木叶护额、哈利波特的死亡圣器项链、精灵宝可梦的精灵球饰品等。可以选择日常也能佩戴的低调款，或还原度高的夸张款。根据角色风格选择材质和颜色。避免过于廉价或做工粗糙的款式，影响整体效果。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "角色印象服/主题T恤",
+                                    "reason": "选择印有喜爱动漫、游戏角色或主题元素的上衣，展现热爱。也可以选择\"角色印象服\"——提取角色配色或元素设计的日常服装。颜色选择角色主题色：如鸣人橙蓝、初音绿、钢铁侠红金等。可以尝试搭配角色同款配色或风格。选择舒适面料，漫展可能需要长时间穿着。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "下装",
+                                    "name": "配色呼应裤装/角色风格",
+                                    "reason": "选择与上衣或角色主题配色呼应的裤装。例如：动漫角色穿什么颜色裤子，可以选择同款颜色。也可以选择角色风格的裤装：校园风选择百褶裙或西裤，战斗风选择工装裤或紧身裤。颜色选择角色主题色或基础色（黑、白、灰）。避免与整体风格不协调的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "角色同款外套/主题配色",
+                                    "reason": "一件角色同款外套是漫展穿搭的亮点：如进击的巨人调查兵团斗篷、哈利波特学院袍、火影忍者晓组织风衣等。也可以选择角色主题配色的日常外套，如红色外套配鸣人风格、绿色外套配初音风格。选择还原度高或有明显元素的款式，让同好一眼识别。考虑漫展室内外温差，选择合适厚度。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "角色同款/配色呼应",
+                                    "reason": "选择与角色同款或配色呼应的鞋子。例如：火影忍者的忍者靴（可以选择类似款式的马丁靴或军靴）、运动番的同款运动鞋。颜色选择角色主题色或基础色（黑、白、灰）。漫展可能需要大量行走，选择舒适的款式。可以准备创可贴备用。"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "adult": {
+                "daily": {
+                    "options": [
+                        {
+                            "name": "品质休闲风",
+                            "subtitle": "适合30+的日常穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "品质珠宝/经典手表",
+                                    "reason": "30+后选择更有品质感的首饰，如K金项链、品质珍珠或经典品牌手表。一两件精致的首饰能提升整体质感。投资经典款式，可以佩戴多年。避免过于花哨或廉价的饰品，选择经得起时间考验的设计。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "真丝T恤/品质针织衫",
+                                    "reason": "选择面料更好的基础款：真丝混纺T恤、高品质棉针织衫。颜色以经典色为主：白、米、藏青、深灰、酒红。选择经典剪裁，避免过于潮流或幼稚的设计。投资几件高品质单品，比十件廉价衣服更值得。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "品质牛仔裤/烟管裤",
+                                    "reason": "选择版型好、面料优质的牛仔裤（深色、中高腰、直筒或微喇）。烟管裤或直筒休闲裤更显利落。颜色以黑、藏青、深灰、卡其为主。选择中高腰设计，优化身材比例。避免低腰或过于紧身的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "品质风衣/针织外套",
+                                    "reason": "投资一件经典版型的高品质风衣（卡其、黑、藏青），可以穿很多年。针织外套选择羊绒或美利奴羊毛混纺，柔软保暖。颜色以经典色为主。选择合身但不紧绷的版型。避免过于花哨或潮流的设计，经典款更耐穿。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "真皮休闲鞋/品质运动鞋",
+                                    "reason": "选择真皮材质的休闲鞋（乐福鞋、德比鞋）或高品质运动鞋。颜色以黑、棕、白为主。投资一两双品质好的鞋子，舒适且耐穿。保持鞋子干净整洁，这是品质感的重要细节。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "business": {
+                    "options": [
+                        {
+                            "name": "权威商务风",
+                            "subtitle": "适合管理岗位、重要会议",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "高端手表/简约珠宝",
+                                    "reason": "管理岗位选择一块有分量的手表（机械表、贵金属材质），彰显品味与实力。女士可选择简约但有品质的珠宝（小颗钻石、南洋珍珠）。避免佩戴夸张或时尚感过强的首饰，保持权威稳重。投资经典品牌，保值且提升形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "高支棉衬衫/真丝衬衫",
+                                    "reason": "选择100支以上高支棉衬衫，面料挺括细腻，彰显品质。女士选择真丝或高品质棉混纺blouse。颜色以白、浅蓝、浅粉、米白为主。选择经典翻领或小V领设计。确保剪裁合身，过于宽松或紧绷都会影响专业形象。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "同色系西裤/西装裙",
+                                    "reason": "选择与西装同色系的高品质西裤，面料以羊毛或羊毛混纺为主（Super 120s以上）。裤长刚好盖住鞋面，裤线笔直。女士选择及膝或及小腿的西装裙，避免过短。颜色以黑、藏青、深灰为主。投资定制西装，合身度是关键。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "高端定制西装/品质大衣",
+                                    "reason": "投资一两套高端定制西装，面料选择意大利或英国进口羊毛，颜色以藏青、深灰、炭黑为主。单排两粒扣或双排扣经典款式。冬季外搭一件羊绒或羊绒混纺大衣（驼色、黑、藏青），长度过膝。定制西装是职场最好的投资，合身且彰显身份。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "固特异皮鞋/高端高跟鞋",
+                                    "reason": "男士选择固特异工艺的牛津鞋或三接头皮鞋，真皮鞋底越穿越合脚。女士选择高端品牌的中跟高跟鞋（3-5厘米），真皮内里更舒适。颜色以黑、深棕为主。保持鞋子一尘不染，定期保养。投资品质鞋履，一双好鞋可以穿十年以上。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "date": {
+                    "options": [
+                        {
+                            "name": "成熟魅力风",
+                            "subtitle": "适合30+的约会穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "精致珠宝/品质手表",
+                                    "reason": "30+后选择更有质感的首饰，如小颗钻石项链、品质珍珠或K金饰品。一块优雅的女士手表既能看时间又彰显品味。避免过于可爱或廉价的饰品，选择简约精致的款式。一两件重点饰品足矣，不要堆砌。"
+                                },
+                                "top": {
+                                    "icon": "👚",
+                                    "name": "真丝衬衫/品质针织衫",
+                                    "reason": "选择真丝、缎面或高品质针织面料，触感舒适且显高级。颜色以酒红、墨绿、藏青、米色、黑色为主。V领或小翻领设计展现颈部线条。选择经典剪裁，避免过于暴露或幼稚的款式。投资几件高品质单品，穿得更久也更有质感。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "name": "铅笔裙/阔腿裤",
+                                    "reason": "铅笔裙（及膝或及小腿）展现成熟女性曲线，优雅得体。阔腿裤（高腰设计）干练又有气场。选择垂坠感好的面料：羊毛混纺、西装料、重磅真丝。颜色以黑、藏青、酒红、墨绿为主。避免过于紧身或暴露的款式，保持优雅得体。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "高品质风衣/呢子大衣",
+                                    "reason": "投资一件经典版型的高品质风衣（卡其、黑、藏青），任何年龄都能穿。冬季选择羊绒或羊毛混纺大衣（驼色、黑、酒红）。选择合身但不紧绷的版型。颜色以经典色为主，耐穿且容易搭配。避免过于潮流或花哨的设计，经典款更保值。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "name": "真皮中跟鞋/品质平底鞋",
+                                    "reason": "选择3-5厘米的中跟鞋，真皮材质质感高级。尖头款式显腿长，裸色或黑色百搭。如果不习惯穿高跟，选择精致的真皮平底鞋或乐福鞋。投资品质鞋履，舒适且耐穿。新鞋提前磨合，避免约会时磨脚。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "party": {
+                    "options": [
+                        {
+                            "name": "优雅贵妇风",
+                            "subtitle": "适合30+的派对穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "高端珠宝/经典饰品",
+                                    "reason": "30+后派对可以佩戴更有分量的珠宝：钻石项链、珍珠套装、品质宝石。选择一两件重点饰品，其他保持简约。投资经典款式，既适合派对也适合正式场合。避免过于夸张或廉价的饰品，选择经得起时间考验的设计。"
+                                },
+                                "top": {
+                                    "icon": "👗",
+                                    "name": "小黑裙/缎面礼服",
+                                    "reason": "选择面料高级的款式：真丝、缎面、蕾丝、重磅雪纺。颜色以黑、酒红、墨绿、藏青、金色为主。款式选择经典优雅：V领、一字肩、适度露肤。避免过于暴露或潮流的设计，保持优雅得体。投资一两件高品质礼服，可以穿多年。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "阔腿裤/及膝裙",
+                                    "reason": "选择垂坠感好的面料：真丝、缎面、羊毛混纺。阔腿裤（高腰设计）干练又有气场，适合喜欢裤装的人。及膝或midi裙优雅得体。颜色以黑、酒红、墨绿为主。避免迷你裙或过于紧身的款式，保持成熟优雅。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "皮草披肩/高端大衣",
+                                    "reason": "冬季派对选择人造皮草披肩或高端羊绒大衣，增添奢华感。春秋选择小西装或真丝披肩。颜色以黑、驼色、酒红为主。选择高品质面料和做工。避免过于廉价或夸张的款式，保持优雅品味。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "name": "真皮高跟鞋/缎面鞋",
+                                    "reason": "选择5-7厘米的细跟或粗跟鞋，真皮或缎面材质。颜色以黑、裸色、酒红、金色为主。避免过高的鞋跟，影响活动。投资品质鞋履，舒适且耐穿。可以准备创可贴或备用平底鞋。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "play": {
+                    "options": [
+                        {
+                            "name": "品质运动风",
+                            "subtitle": "适合30+的运动穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "运动手表/简约发带",
+                                    "reason": "选择高品质运动手表（如Garmin、Apple Watch），功能实用且有设计感。简约发带固定碎发，选择高品质面料。避免佩戴贵重或易损坏的首饰。可以选择专业运动品牌的配饰，品质更有保障。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "高端运动品牌/品质速干衣",
+                                    "reason": "选择高端运动品牌（Lululemon、Nike高端线、Adidas by Stella McCartney等），面料和剪裁更好。颜色以黑、深灰、藏青、酒红为主，避免过于鲜艳或幼稚的颜色。选择合身但不紧绷的版型。投资高品质运动装，舒适且耐穿。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "品质leggings/运动裤",
+                                    "reason": "选择高品质leggings（如Lululemon），面料厚实不透明，支撑性好。运动裤选择垂坠感好的面料，避免过于廉价或薄透的款式。颜色以黑、深灰、藏青为主。选择高腰设计，优化身材比例。避免印有大logo或幼稚图案的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "高端运动外套/皮肤衣",
+                                    "reason": "选择高端运动品牌的外套，面料科技含量高，设计也更时尚。皮肤衣选择品质好的款式，轻薄透气。颜色以黑、深灰、藏青、酒红为主。避免过于鲜艳或花哨的颜色。选择经典款式，穿得更久。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "高端运动鞋/专业跑鞋",
+                                    "reason": "选择高端品牌的专业运动鞋（Asics、Brooks、Saucony等），保护关节且舒适。颜色以黑、白、深灰为主，避免过于花哨的配色。投资一双好的运动鞋，是对自己身体的投资。定期更换，鞋底磨损后及时换新。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "game": {
+                    "options": [
+                        {
+                            "name": "低调热爱风",
+                            "subtitle": "适合30+的游戏爱好者",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "低调游戏元素/品质手表",
+                                    "reason": "30+后可以选择更低调的游戏元素首饰，如简约设计的游戏主题项链、低调的战队logo配饰。搭配一块品质手表，平衡兴趣与成熟感。避免过于夸张或幼稚的款式。选择品质好的材质，如纯银、K金等。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "低调游戏T恤/品质休闲衫",
+                                    "reason": "选择设计更成熟的游戏周边：抽象元素、艺术风格、限量联名款。避免印有夸张大logo或幼稚图案的款式。颜色以黑、白、深灰、藏青为主。选择高品质棉或混纺面料。可以选择设计师联名款，品质和设计感更好。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "品质休闲裤/深色牛仔裤",
+                                    "reason": "选择高品质休闲裤（卡其、藏青、深灰）或深色牛仔裤（直筒、微喇）。中高腰设计，优化身材比例。颜色以经典色为主。避免低腰、破洞或过于紧身的款式。选择优质面料，耐穿且版型更好。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "品质休闲外套/低调联名款",
+                                    "reason": "选择高品质休闲外套（风衣、休闲西装、牛仔外套）。如果选择游戏联名款，选择设计低调、品质好的款式。颜色以经典色为主。避免过于花哨或夸张的设计。投资经典款式，穿得更久也更有质感。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "品质运动鞋/经典款",
+                                    "reason": "选择经典款或高品质运动鞋（New Balance、Adidas经典款、Nike Air Max等）。避免过于花哨或限量款炒作的款式。颜色以黑、白、深灰为主。保持鞋子干净整洁。投资经典款式，不过时且耐穿。"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "senior": {
+                "daily": {
+                    "options": [
+                        {
+                            "name": "优雅舒适风",
+                            "subtitle": "适合成熟女性的日常穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "经典珠宝/传家饰品",
+                                    "reason": "成熟年龄是佩戴珠宝的最佳时机，可以选择珍珠项链、翡翠、宝石或传家饰品。一两件有故事的珠宝能提升整体气质。投资经典款式，可以传给下一代。选择品质好的材质和做工，避免廉价饰品。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "真丝衬衫/品质针织衫",
+                                    "reason": "选择真丝、重磅棉或高品质针织面料，舒适且显高级。颜色以米色、浅紫、酒红、墨绿、藏青、灰色为主。选择经典翻领或小V领设计。避免过于暴露或紧身的款式。选择宽松但不拖沓的版型，舒适且得体。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "name": "及膝裙/直筒裤",
+                                    "reason": "选择及膝或及小腿的A字裙或直筒裙，优雅得体。直筒裤或阔腿裤舒适又有气场。选择垂坠感好的面料：羊毛混纺、重磅棉、真丝。颜色以黑、藏青、深灰、米色、卡其为主。中高腰设计，优化身材比例。避免低腰或过于紧身的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "经典风衣/羊绒大衣",
+                                    "reason": "投资一件经典版型的高品质风衣（卡其、藏青、灰色），任何年龄都能穿。冬季选择羊绒或羊毛混纺大衣（驼色、黑、酒红、灰色），长度过膝。选择合身但舒适的版型。颜色以经典色为主，耐穿且容易搭配。避免过于潮流或花哨的设计。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "低跟真皮鞋/舒适平底鞋",
+                                    "reason": "选择2-4厘米的低跟或粗跟鞋，真皮材质舒适且质感好。乐福鞋、小皮鞋或精致平底鞋都是不错的选择。颜色以黑、棕、酒红、米色为主。确保鞋底防滑，安全第一。投资舒适的鞋子，对脚部健康很重要。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "business": {
+                    "options": [
+                        {
+                            "name": "资深权威风",
+                            "subtitle": "适合资深人士的商务穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "经典手表/简约珠宝",
+                                    "reason": "资深人士选择一块有历史感或品牌经典款手表，彰显阅历与品味。女士可选择珍珠项链或品质宝石。避免佩戴夸张或时尚感过强的首饰。投资品牌经典款，保值且彰显身份。选择低调但有分量的款式。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "高支棉衬衫/真丝衬衫",
+                                    "reason": "选择120支以上高支棉衬衫，面料细腻挺括，彰显品质。女士选择真丝或高品质棉混纺blouse。颜色以白、浅蓝、浅粉、米白为主。选择经典翻领设计。确保剪裁合身，面料垂坠感好。投资定制或高端成衣，合身度是关键。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "同色系西裤/西装裙",
+                                    "reason": "选择与西装同色系的高品质西裤，面料以意大利或英国进口羊毛为主。裤长适中，裤线笔直。女士选择及膝或及小腿的西装裙，避免过短。颜色以藏青、深灰、炭黑为主。投资定制西装，展现资深人士的品味与实力。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "高端定制西装/羊绒大衣",
+                                    "reason": "投资一两套高端定制西装，选择Super 150s以上羊毛面料，颜色以藏青、深灰、炭黑为主。单排两粒扣或双排扣经典款式。冬季外搭一件纯羊绒大衣（驼色、黑、藏青），长度过膝。资深人士的着装是实力的象征，投资高品质西装很有必要。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "高端固特异皮鞋/品质中跟鞋",
+                                    "reason": "男士选择英国或意大利品牌的固特异工艺皮鞋，真皮鞋底越穿越合脚。女士选择高端品牌的中跟高跟鞋（3-4厘米），粗跟更稳。颜色以黑、深棕为主。保持鞋子一尘不染，定期专业保养。一双好鞋可以穿十几年，值得投资。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "date": {
+                    "options": [
+                        {
+                            "name": "典雅风韵风",
+                            "subtitle": "适合成熟女性的约会穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "珍珠项链/品质宝石",
+                                    "reason": "成熟年龄最能驾驭珍珠的温润优雅，一条高品质珍珠项链（南洋珍珠、大溪地黑珍珠）能提升整体气质。也可以选择翡翠、红宝石、蓝宝石等贵重宝石。一两件重点饰品足矣，不要堆砌。投资有品质的珠宝，可以佩戴一生。"
+                                },
+                                "top": {
+                                    "icon": "👚",
+                                    "name": "真丝衬衫/羊绒针织衫",
+                                    "reason": "选择真丝、缎面或羊绒面料，触感舒适且显高级。颜色以酒红、墨绿、藏青、米色、紫色、灰色为主。V领或小翻领设计展现颈部线条。选择经典剪裁，避免过于暴露或幼稚的款式。投资几件高品质单品，穿得更久也更有质感。"
+                                },
+                                "bottom": {
+                                    "icon": "👗",
+                                    "name": "及膝裙/阔腿裤",
+                                    "reason": "选择及膝或及小腿的A字裙、铅笔裙，优雅得体。阔腿裤（高腰设计）干练又有气场。选择垂坠感好的面料：羊毛混纺、重磅真丝、三醋酸。颜色以黑、藏青、酒红、墨绿、米色为主。中高腰设计，优化身材比例。避免低腰、迷你裙或过于紧身的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "经典风衣/羊绒大衣",
+                                    "reason": "投资一件经典版型的高品质风衣（卡其、藏青、灰色），任何年龄都能穿。冬季选择羊绒或羊毛混纺大衣（驼色、黑、酒红、灰色）。选择合身但舒适的版型。颜色以经典色为主，耐穿且容易搭配。避免过于潮流或花哨的设计，经典款更显品味。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "name": "低跟真皮鞋/精致平底鞋",
+                                    "reason": "选择2-4厘米的低跟或粗跟鞋，真皮材质舒适且质感好。尖头款式显腿长，裸色或黑色百搭。如果不习惯穿高跟，选择精致的真皮平底鞋。投资品质鞋履，舒适且耐穿。确保鞋底防滑，安全第一。可以准备舒适的备用鞋。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "party": {
+                    "options": [
+                        {
+                            "name": "华贵典雅风",
+                            "subtitle": "适合成熟人士的派对穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "贵重珠宝/经典饰品",
+                                    "reason": "成熟年龄是佩戴贵重珠宝的最佳时机：钻石项链、珍珠套装、翡翠、红蓝宝石等。选择一两件重点饰品，其他保持简约。投资有品质的珠宝，既适合派对也适合正式场合，还可以传给下一代。选择经典款式，避免过于夸张或时尚感过强的设计。"
+                                },
+                                "top": {
+                                    "icon": "👗",
+                                    "name": "高级礼服/小黑裙",
+                                    "reason": "选择面料高级的款式：重磅真丝、缎面、蕾丝、刺绣。颜色以黑、酒红、墨绿、藏青、金色、深紫为主。款式选择经典优雅：适度露肤（肩线、锁骨），避免过于暴露。长度选择及膝或及小腿。投资一两件高品质礼服，可以穿多年且彰显品味。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "真丝阔腿裤/及膝裙",
+                                    "reason": "选择垂坠感好的面料：重磅真丝、三醋酸、羊毛混纺。真丝阔腿裤（高腰设计）干练又有气场，适合喜欢裤装的人。及膝或midi裙优雅得体。颜色以黑、酒红、墨绿、藏青为主。避免迷你裙、低腰或过于紧身的款式，保持成熟优雅。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "皮草披肩/羊绒大衣",
+                                    "reason": "冬季派对选择高品质人造皮草披肩或纯羊绒大衣，增添奢华感。春秋选择小西装或真丝披肩。颜色以黑、驼色、酒红、深紫为主。选择高品质面料和做工。避免过于廉价或夸张的款式，保持优雅品味。"
+                                },
+                                "shoes": {
+                                    "icon": "👠",
+                                    "name": "中跟真皮鞋/缎面鞋",
+                                    "reason": "选择3-5厘米的中跟或粗跟鞋，真皮或缎面材质。避免过高的鞋跟，影响活动和安全。颜色以黑、裸色、酒红、金色为主。投资品质鞋履，舒适且耐穿。确保鞋底防滑。可以准备创可贴或备用平底鞋。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "play": {
+                    "options": [
+                        {
+                            "name": "舒适运动风",
+                            "subtitle": "适合成熟人士的运动穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "运动手表/简约发带",
+                                    "reason": "选择高品质运动手表，监测心率和运动数据，功能实用。简约发带固定碎发，选择高品质面料。避免佩戴贵重或易损坏的首饰。可以选择专业运动品牌的配饰，品质更有保障。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "品质速干衣/舒适T恤",
+                                    "reason": "选择高品质运动品牌，面料柔软舒适，支撑性好。颜色以黑、深灰、藏青、酒红、紫色为主，避免过于鲜艳的颜色。选择宽松但不拖沓的版型。投资高品质运动装，舒适且耐穿。优先考虑面料的透气性和舒适度。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "舒适运动裤/品质休闲裤",
+                                    "reason": "选择垂坠感好、面料柔软的运动裤或休闲裤。高腰设计，舒适且优化比例。颜色以黑、深灰、藏青、卡其为主。选择宽松但不拖沓的版型。避免低腰、过于紧身或薄透的款式。优先考虑舒适度和面料质感。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "舒适外套/皮肤衣",
+                                    "reason": "选择舒适保暖的外套：抓绒衣、软壳衣、轻便风衣。皮肤衣选择轻薄透气的款式。颜色以黑、深灰、藏青、酒红为主。避免过于鲜艳或花哨的颜色。选择经典款式，穿得更久。优先考虑舒适度和实用性。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "舒适运动鞋/专业健步鞋",
+                                    "reason": "选择专业健步鞋或舒适运动鞋，优先考虑缓震和支撑性，保护关节。避免过于花哨或硬底的款式。颜色以黑、深灰、白色为主。投资一双好的鞋子，对脚部和关节健康很重要。确保鞋底防滑，安全第一。定期更换，鞋底磨损后及时换新。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "game": {
+                    "options": [
+                        {
+                            "name": "含蓄兴趣风",
+                            "subtitle": "适合成熟游戏爱好者",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "经典手表/低调饰品",
+                                    "reason": "成熟爱好者选择一块经典手表，搭配非常低调的游戏元素饰品（如果有）。避免过于夸张或幼稚的款式。选择品质好的材质和做工。保持成熟优雅的形象，兴趣是私人的享受。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "品质休闲衫/低调元素",
+                                    "reason": "选择高品质休闲衫： Polo衫、针织衫、简约T恤。如果想表达游戏热爱，选择设计非常低调的款式（抽象元素、小众联名）。颜色以黑、白、深灰、藏青、酒红为主。选择优质面料和经典剪裁。避免印有大logo或幼稚图案的款式。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "品质休闲裤/深色牛仔裤",
+                                    "reason": "选择高品质休闲裤（卡其、藏青、深灰）或深色牛仔裤（直筒版型）。中高腰设计，舒适且优化比例。颜色以经典色为主。避免低腰、破洞或过于紧身的款式。选择优质面料，耐穿且版型更好。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "经典休闲外套",
+                                    "reason": "选择经典款式的休闲外套：风衣、休闲西装、针织外套、高品质牛仔外套。颜色以经典色为主。避免过于花哨或夸张的设计。投资经典款式，穿得更久也更有质感。保持成熟优雅的形象。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "品质休闲鞋/经典运动鞋",
+                                    "reason": "选择品质休闲鞋（乐福鞋、真皮板鞋）或经典款运动鞋。避免过于花哨或限量款炒作的款式。颜色以黑、白、深灰为主。保持鞋子干净整洁。投资经典款式，不过时且耐穿。优先考虑舒适度。"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "male": {
+            "teen": {
+                "daily": {
+                    "options": [
+                        {
+                            "name": "青春活力风",
+                            "subtitle": "适合学生党日常",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "运动手环/简约手链",
+                                    "reason": "青少年男生首饰宜简不宜繁，一块运动手环或智能手表既能看时间又增添时尚感。简约皮革手链或编织手绳也很适合学生身份。避免佩戴过于成熟或夸张的首饰，保持青春活力。选择不易过敏的材质（硅胶、皮革、医用钢）。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "连帽卫衣/印花T恤",
+                                    "reason": "连帽卫衣是学生党的标配，选择明亮的颜色（黑色、灰色、藏青、酒红）或印有潮流图案、logo的款式。oversize版型流行又舒适，搭配紧身裤显腿长。T恤选择有趣的印花或标语，展现个性态度。选择纯棉或柔软混纺面料，舒适亲肤。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "牛仔裤/运动束脚裤",
+                                    "reason": "牛仔裤是男生日常穿搭的必备，选择直筒或修身版型，颜色以深蓝、黑色、浅蓝为主。运动束脚裤舒适又有潮流感，侧边条纹或logo设计很受欢迎。选择高腰或中腰款式，优化身材比例。避免低腰或过于紧身的款式，保持舒适自在。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "牛仔外套/棒球服",
+                                    "reason": "牛仔外套（经典蓝或黑色）青春又百搭，搭配卫衣或T恤都很适合。棒球服则更有运动感，背后的数字或logo增添校园风格。选择适中厚度，春秋可穿。也可以选择工装外套，多口袋设计实用又有型。颜色选择经典色，耐脏且百搭。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "运动鞋/帆布鞋/老爹鞋",
+                                    "reason": "运动鞋（Nike、Adidas等）舒适又有运动感，是学生党首选。帆布鞋（匡威、Vans款）价格亲民，青春活力。老爹鞋厚底增高又有潮流感，近年来非常流行。选择鞋底柔软的款式，适应校园内长时间行走。颜色以黑、白、灰为主，或选择撞色款式。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "business": {
+                    "options": [
+                        {
+                            "name": "学生面试装",
+                            "subtitle": "适合实习、兼职面试",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表",
+                                    "reason": "青少年男生面试一块普通石英手表足矣，显示时间观念。避免佩戴手链、项链、戒指等首饰，保持简洁干练的第一印象。如果有耳钉，建议面试时取下。保持干净整洁的形象最重要。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "白衬衫/简约衬衫",
+                                    "reason": "一件干净的白衬衫是面试必备，选择合身版型，避免过于宽松或紧身。选择棉质或混纺面料，不易皱更好。颜色以白色、浅蓝色为主。确保领口袖口干净，没有污渍或破损。面试前熨烫平整，展现重视态度。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "西裤/卡其裤",
+                                    "reason": "西裤是最安全的选择，颜色以黑、藏青、深灰为主。如果没有西裤，一条干净的卡其裤（卡其色、深卡其）也可以接受。选择修身但不紧绷的版型。确保裤子干净，没有明显褶皱或污渍。避免牛仔裤、运动裤等过于休闲的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "小西装外套/针织开衫",
+                                    "reason": "一件合身的小西装外套能瞬间提升专业感，选择黑、藏青或浅灰色。如果没有西装外套，一件简约的针织开衫（黑、深灰、藏青）也能起到类似作用。选择适中厚度，室内空调房也适用。确保外套干净整洁。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "皮鞋/干净的休闲鞋",
+                                    "reason": "最理想是一双黑色或深棕色皮鞋，鞋面干净擦亮。如果没有皮鞋，一双非常干净的小白鞋或休闲板鞋（全黑或全白）也可以尝试，但皮鞋更保险。袜子选择深色（黑、深灰、藏青），避免白色或彩色袜子。确保鞋子干净，没有破损或明显污渍。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "date": {
+                    "options": [
+                        {
+                            "name": "清新阳光风",
+                            "subtitle": "适合校园约会",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表/手链",
+                                    "reason": "青少年男生约会一块简约手表或皮革手链足矣，不要佩戴过多首饰。保持干净阳光的形象。避免过于夸张或非主流的首饰。如果有耳钉，可以选择小巧低调的款式，或暂时取下。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "简约T恤/针织衫",
+                                    "reason": "选择干净清爽的基础款T恤（白、浅蓝、浅灰、淡粉），展现阳光气质。针织衫（米色、浅灰、藏青）温柔又有品味。选择合身但不紧绷的版型。避免印有夸张标语或图案的款式。确保衣服干净平整，没有明显污渍或褶皱。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "牛仔裤/休闲裤",
+                                    "reason": "一条版型好的牛仔裤（直筒或修身，深蓝或黑色）是约会神器。卡其裤（卡其色、深灰）则更显利落。选择中高腰款式，优化身材比例。确保裤子干净，没有明显破洞（除非是刻意的时尚设计，但约会建议保守）。避免运动裤或过于宽松的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "牛仔外套/休闲西装/针织开衫",
+                                    "reason": "牛仔外套青春阳光，搭配T恤或针织衫都很适合。休闲西装则更显品味，适合稍正式的约会。针织开衫温柔又保暖，室内外穿脱方便。选择适合季节和场合的款式。颜色以经典色为主，与整体风格协调。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "小白鞋/休闲板鞋",
+                                    "reason": "一双干净的小白鞋是男生约会的神器，干净清爽又百搭。休闲板鞋或帆布鞋也是不错的选择。确保鞋子一尘不染，一双脏鞋会严重破坏好感度。袜子选择白色或与鞋子颜色协调的颜色。选择舒适的款式，约会可能需要大量行走。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "party": {
+                    "options": [
+                        {
+                            "name": "青春潮流风",
+                            "subtitle": "适合生日派对、同学聚会",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "个性项链/手链",
+                                    "reason": "派对是展现个性的时机，可以尝试叠戴项链或有设计感的手链。选择银色、黑色或古铜色，与派对风格更搭。避免佩戴过于贵重或夸张的首饰。可以选择有个性的戒指，但不要过多。保持整体协调。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "潮牌T恤/设计感衬衫",
+                                    "reason": "派对可以更大胆一些，选择有设计感的潮牌T恤或个性衬衫。可以尝试亮片元素、金属光泽、独特印花或标语。颜色可以更大胆：黑色、酒红、墨绿、金色、白色。选择oversize或修身版型，根据个人风格。避免过于普通或保守的款式。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "修身裤/工装裤",
+                                    "reason": "修身裤（黑色、深灰）展现腿型，搭配修身或oversize上衣都很有型。工装裤多口袋设计实用又有造型感，是潮流风的热门单品。选择黑色、军绿或深灰色。避免过于宽松或邋遢的款式。可以尝试侧边条纹或特殊设计的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "皮夹克/潮牌外套",
+                                    "reason": "一件黑色皮夹克（机车款）是派对的神器，酷感十足。潮牌外套或设计师联名款彰显时尚品味。也可以尝试亮片或金属光泽的外套。选择oversize版型，内搭短款上衣形成层次感。考虑派对室内可能较热，选择方便穿脱的款式。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "潮牌运动鞋/皮鞋",
+                                    "reason": "热门潮牌运动鞋（AJ、Yeezy等）或老爹鞋是潮流派对的热门选择。也可以选择一双亮面皮鞋（黑色或酒红），更显成熟。保持鞋子干净，一双脏鞋会破坏整体潮感。选择舒适的款式，派对可能需要长时间站立。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "play": {
+                    "options": [
+                        {
+                            "name": "活力运动风",
+                            "subtitle": "适合户外运动、打球",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "运动手环",
+                                    "reason": "运动时以实用为主，运动手环或智能手表方便看时间和计步。避免佩戴手链、项链、戒指等首饰，以免在运动中损坏或受伤。如果有耳钉，建议运动时取下或选择不易勾挂的款式。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "速干T恤/运动背心",
+                                    "reason": "选择透气速干的运动面料（涤纶、锦纶混纺），出汗后能快速蒸发保持干爽。亮色（荧光黄、橙色、天蓝）在户外更安全。夏季选择无袖或背心款式更凉爽，春秋选择长袖速干衣防晒防虫。选择合身但不紧绷的版型，确保运动自如。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "运动短裤/运动长裤",
+                                    "reason": "根据运动强度选择裤长：跑步或打球可选速干运动短裤，户外徒步或秋冬选择运动长裤。选择速干、弹性好的面料，避免棉质裤子（出汗后贴身且不易干）。侧边口袋方便放置手机或小物件。选择合身但不紧绷的版型。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "防风外套/皮肤衣",
+                                    "reason": "户外活动必备一件轻便防风外套，应对早晚温差或突发风雨。皮肤衣轻薄便携，防晒又防风，是春夏户外活动的好选择。冬季选择保暖透气的抓绒外套。选择明亮颜色或带有反光条的款式，增加安全性。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "专业运动鞋",
+                                    "reason": "根据运动类型选择合适的鞋子：跑步选缓震好的跑鞋，打球选篮球鞋，徒步选户外鞋。确保鞋子合脚，建议比平时大半码，留出活动空间（运动时脚会肿胀）。袜子选择专业运动袜（棉混纺或功能面料），吸汗防滑避免磨脚。新鞋建议提前磨合，避免运动时磨脚。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "game": {
+                    "options": [
+                        {
+                            "name": "电竞少年风",
+                            "subtitle": "适合电竞赛事、游戏聚会",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约项链/手链",
+                                    "reason": "电竞活动可以选择简约的金属项链或皮革手链，增添潮流感。避免佩戴影响操作的首饰，如过长的项链或易勾挂的手环。可以选择游戏主题的低调配饰。不要过多佩戴，一两件足矣。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "战队队服/游戏周边T恤",
+                                    "reason": "一件支持的战队队服或游戏周边T恤是电竞活动的标配，展现归属感和热爱。选择oversize版型，舒适又有潮流感。颜色以黑、白、灰或战队主题色为主。如果是线下活动，选择颜色鲜艳或有特色设计的款式，在人群中更显眼。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "工装裤/束脚运动裤",
+                                    "reason": "工装裤多口袋设计实用又有型，可以放置手机、充电宝、耳机等电竞必备物品。束脚运动裤舒适又有运动感。选择黑色、深灰、卡其或军绿色。避免过于紧身的牛仔裤，长时间坐姿会不舒服。选择高腰或中腰款式，优化比例。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "战队外套/棒球服",
+                                    "reason": "一件电竞战队外套（出征服、选手同款）是游戏穿搭的灵魂，瞬间识别同好。棒球服外套自带运动青春气息，搭配T恤或卫衣都很适合。选择oversize版型。考虑室内空调可能较冷，准备一件外套很有必要。颜色以黑、白、灰或战队标志性配色为主。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "老爹鞋/潮牌运动鞋",
+                                    "reason": "老爹鞋厚底增高又有潮流感，是电竞穿搭的热门选择。热门潮牌运动鞋（AJ、Yeezy等）或经典复古款式都是不错的选择。也可以选择游戏联名款鞋履，展现深度热爱。保持鞋子干净，一双脏鞋会破坏整体潮感。线下活动可能需要长时间站立，选择舒适的款式。"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "young": {
+                "daily": {
+                    "sceneInfo": {
+                        "title": "日常穿搭",
+                        "desc": "舒适自在，轻松应对日常生活"
+                    },
+                    "options": [
+                        {
+                            "name": "经典休闲风",
+                            "subtitle": "永不过时的选择",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表/皮革手链",
+                                    "reason": "年轻男生日常穿搭一两件简约首饰足矣。一块金属表带手表（钢或皮质）既能看时间又彰显品味。皮革手链或编织手绳增添随性气质。避免佩戴过多首饰，保持干净利落。选择银色、黑色或棕色，经典百搭。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "基础款T恤/牛津纺衬衫",
+                                    "reason": "基础款纯色T恤（白、灰、黑、藏青）是男生衣橱的必备，单穿或内搭都很适合。选择100%纯棉或高品质棉混纺面料，柔软亲肤且不易变形。牛津纺衬衫休闲又有品味，解开一两颗扣子更随性。建议多备几件不同颜色的基础款，轻松应对各种搭配需求。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "牛仔裤/卡其裤",
+                                    "reason": "牛仔裤是男生日常穿搭的核心，选择直筒或修身版型，颜色以深蓝、黑色、浅蓝为主。投资一两件品质好的牛仔裤（Levi's、Lee等品牌），耐穿且版型更优。卡其裤（卡其色、藏青、深灰）则更显利落，适合需要稍正式感的场合。选择中高腰款式，优化身材比例。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "牛仔外套/休闲西装/风衣",
+                                    "reason": "牛仔外套（经典蓝或黑色）百搭实用，春秋季节使用率极高。休闲西装（黑、藏青、浅灰）提升气质，适合日常办公或商务会面。一件经典卡其色风衣是轻熟风格的必备单品，春秋季节外套首选。选择合身但不紧绷的版型。投资一件好的外套，可以穿很多年。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "小白鞋/休闲板鞋",
+                                    "reason": "小白鞋是永恒的经典，几乎能与任何日常穿搭完美搭配，既舒适又时尚。选择真皮或优质人造革面料，更容易清洁保养。休闲板鞋（阿迪达斯、耐克等）则更具运动感。选择质量好、鞋底柔软的款式，确保长时间行走也不累脚。建议准备两双轮换穿着，延长鞋子寿命。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "商务休闲风",
+                            "subtitle": "适合日常办公",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表",
+                                    "reason": "商务休闲风格一块简约手表足矣，保持专业干练。选择金属表带或皮质表带，表盘设计简约。避免佩戴手链、项链等其他首饰。如果有耳钉，建议选择非常低调的款式或取下。保持简洁专业的形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "针织衫/休闲衬衫",
+                                    "reason": "男士可以选择针织衫（V领或圆领）内搭衬衫，或单穿品质较好的休闲衬衫。颜色可以比正式商务稍丰富，浅紫、墨绿、酒红等都可尝试。选择牛津纺、棉麻或混纺面料。避免过于休闲的款式，如连帽卫衣、印花过于夸张的T恤（创意行业除外）。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "卡其裤/休闲西裤",
+                                    "reason": "卡其裤（卡其色、藏青、深灰）是商务休闲的理想选择，比牛仔裤正式比西裤休闲。选择修身但不紧绷的版型，面料以斜纹棉布或混纺为主。休闲西裤也是不错的选择。避免牛仔裤、运动裤等过于休闲的款式，除非公司文化非常宽松。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "休闲西装/风衣",
+                                    "reason": "一件休闲西装（可以选择稍活泼的颜色或面料）能瞬间提升专业感，但比正式西装柔和。选择单排扣设计，可以不系扣穿着更随性。风衣也是商务休闲的好选择，卡其色或浅灰色经典百搭。避免过于休闲的外套，如牛仔外套、运动外套等（创意行业除外）。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "乐福鞋/德比鞋/干净的小白鞋",
+                                    "reason": "乐福鞋（真皮材质）既舒适又有品位，一脚蹬设计方便穿脱。颜色以黑色、深棕、酒红为主。德比鞋比牛津鞋稍显休闲，也是不错的选择。如果公司文化非常宽松，一双非常干净的小白鞋也可以接受。保持鞋子干净整洁，这是专业形象的重要细节。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "潮流街头风",
+                            "subtitle": "适合喜欢展现个性",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "多层项链/个性手链",
+                                    "reason": "街头风格可以大胆尝试叠戴项链，不同长度和材质的项链组合形成层次感。个性手链（皮革、金属、编织）或简约戒指也是不错的选择。选择银色、黑色或古铜色，与整体风格协调。可以尝试混搭不同风格的首饰，创造独特个人风格。但不要过多堆砌，保持协调。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "潮牌T恤/连帽卫衣",
+                                    "reason": "一件有设计感的潮牌T恤或oversize连帽卫衣是街头风格的核心。选择印有独特图案、logo或标语的款式，展现个性态度。颜色可以大胆尝试荧光色、撞色、做旧效果或特殊材质。oversize版型是街头风的关键，搭配紧身裤形成对比。建议关注一些小众设计师品牌或潮牌，避免撞衫。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "工装裤/束脚裤/牛仔裤",
+                                    "reason": "工装裤多口袋设计实用又有造型感，是街头风的热门单品。选择黑色、卡其色或军绿色，高腰款式优化比例。束脚运动裤舒适又有运动感，侧边条纹或logo设计很受欢迎。牛仔裤（修身或直筒）搭配简单T恤就很有型。可以尝试破洞、水洗做旧或拼接设计。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "飞行员夹克/牛仔外套/潮牌外套",
+                                    "reason": "经典的MA-1飞行员夹克是街头风的永恒单品，黑色或军绿色都很百搭。选择oversize版型，内搭连帽卫衣形成层次感。牛仔外套（做旧、破洞或手绘）则更具青春感。潮牌外套或设计师联名款彰显时尚品味。也可以尝试皮夹克、工装外套等其他款式，丰富穿搭选择。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "老爹鞋/潮牌运动鞋",
+                                    "reason": "厚底老爹鞋是街头风的标志性鞋款，增高又有造型感。热门潮牌运动鞋（AJ、Yeezy、New Balance等）或经典复古款式都是不错的选择。可以尝试袜子外露的穿搭方式，增添层次感。建议关注限量款或联名款，收藏价值和穿搭价值兼具。保持鞋子干净，一双脏鞋会破坏整体潮感。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "business": {
+                    "sceneInfo": {
+                        "title": "商务穿搭",
+                        "desc": "专业干练，展现职场魅力"
+                    },
+                    "options": [
+                        {
+                            "name": "经典商务风",
+                            "subtitle": "适合正式会议、客户会面",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表/低调袖扣",
+                                    "reason": "商务场合男士首饰宜精不宜多，一块优质金属手表（钢表带或皮表带）既能看时间又彰显品味。选择简约表盘设计，避免过多功能或花哨装饰。如果穿法式袖口衬衫，一对低调的金属袖扣能增添精致细节。避免佩戴手链、项链、戒指等其他首饰，保持专业稳重。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "高支棉衬衫",
+                                    "reason": "选择80支以上高支棉定制衬衫，面料挺括不易皱，领口袖口干净利落。颜色以白色、浅蓝色为主，细条纹或小方格也可接受。选择经典翻领（小方领或温莎领），根据脸型选择。确保尺码合身，领口能插入一根食指为宜。建议准备5-7件衬衫轮换，保持每天整洁。面试或重要会议前务必熨烫平整。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "同色系西裤",
+                                    "reason": "选择与西装同色系的西裤，裤长刚好盖住鞋面，裤线笔直。选择羊毛或羊毛混纺面料，垂坠感好且不易皱。颜色以黑、藏青、深灰为主。确保裤腰合身，能插入一根手指为宜。避免裤腰过低或裤长过短/过长。建议准备2-3条不同颜色的西裤，与西装外套搭配。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "定制西装/品质大衣",
+                                    "reason": "一套合身的定制西装是职场必备，颜色以藏青、深灰、黑色为主，面料选择羊毛或羊毛混纺（Super 100s以上为佳）。单排两粒扣是最经典安全的选择。确保肩线合身，袖子长度露出衬衫袖口1-2厘米。冬季可外搭一件品质大衣（羊绒或羊毛混纺），长度过膝，颜色与西装协调。投资一件好的西装外套，能穿多年且提升整体气质。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "牛津鞋/德比鞋",
+                                    "reason": "选择黑色或深棕色牛津鞋，鞋面光洁无过多装饰。三接头或Cap-Toe款式最为经典正式。德比鞋比牛津鞋稍显休闲，但也可接受。袜子选择同色系（黑、深灰、藏青），棉或羊毛混纺材质，长度确保坐下时不露腿。确保鞋子干净擦亮，破旧的鞋子会破坏整体专业形象。建议准备两双轮换，延长使用寿命。定期上油保养。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "商务休闲风",
+                            "subtitle": "适合日常办公、创意行业",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表",
+                                    "reason": "商务休闲风格一块简约手表足矣，保持专业但不过于严肃。选择金属表带或皮质表带。避免佩戴手链、项链等其他首饰。保持简洁干练的形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "针织衫/休闲衬衫/Polo衫",
+                                    "reason": "男士可以选择针织衫（V领或圆领）内搭衬衫，或单穿品质较好的休闲衬衫。Polo衫也是商务休闲的不错选择，比T恤正式比衬衫休闲。颜色可以比正式商务稍丰富，浅紫、墨绿、酒红等都可尝试。选择牛津纺、棉麻或混纺面料。避免过于休闲的款式，如连帽卫衣、印花过于夸张的T恤。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "卡其裤/休闲西裤",
+                                    "reason": "卡其裤（卡其色、藏青、深灰）是商务休闲的理想选择，比牛仔裤正式比西裤休闲。选择修身但不紧绷的版型，面料以斜纹棉布或混纺为主。休闲西裤也是不错的选择。避免牛仔裤、运动裤等过于休闲的款式，除非公司文化非常宽松。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "休闲西装/风衣",
+                                    "reason": "一件休闲西装（可以选择稍活泼的颜色或面料）能瞬间提升专业感，但比正式西装柔和。选择单排扣设计，可以不系扣穿着更随性。风衣也是商务休闲的好选择，卡其色或浅灰色经典百搭。避免过于休闲的外套，如牛仔外套、运动外套等。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "乐福鞋/德比鞋",
+                                    "reason": "乐福鞋（真皮材质）既舒适又有品位，一脚蹬设计方便穿脱。颜色以黑色、深棕、酒红为主。德比鞋比牛津鞋稍显休闲，也是不错的选择。如果公司文化非常宽松，一双非常干净的小白鞋也可以尝试。保持鞋子干净整洁，这是专业形象的重要细节。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "创意行业风",
+                            "subtitle": "适合设计、媒体、时尚行业",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "个性手表/简约手链",
+                                    "reason": "创意行业可以更自由地表达个性，选择有设计感的手表（独特表盘、表带材质）或简约手链。可以尝试银色、黑色或古铜色。但仍需保持一定专业度，避免过于廉价或夸张的款式。不要过多佩戴，一两件足矣。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "设计感衬衫/品质T恤",
+                                    "reason": "创意行业可以尝试更多设计元素：不对称剪裁、独特面料、有趣的印花或颜色搭配。选择有质感的设计师品牌或小众品牌，展现时尚品味。颜色可以更大胆，墨绿、酒红、紫色、金属色等都可尝试。但仍需避免过于休闲的款式（如连帽卫衣），保持一定专业感。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "阔腿裤/设计感西裤",
+                                    "reason": "阔腿裤（高腰设计）既时尚又有气场，适合创意行业展现个性。可以尝试独特面料（灯芯绒、丝绒、亚麻）或设计细节（翻边、撞色、特殊剪裁）。颜色以黑、深灰、卡其、酒红、墨绿为主。避免过于普通或保守的款式，这是展现创意的好机会。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "设计师款外套/独特剪裁西装",
+                                    "reason": "一件有设计感的外套是创意行业的名片，可以选择独特剪裁、面料或颜色。oversize西装、不对称设计、特色面料（灯芯绒、丝绒、亚麻）都是不错的选择。也可以尝试设计师品牌或先锋品牌的款式。但要确保外套品质感，避免廉价感。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "设计师款鞋履/独特款式",
+                                    "reason": "创意行业可以更大胆地选择鞋履：切尔西靴、沙漠靴、乐福鞋或有设计感的皮鞋。可以尝试独特材质（反绒皮、漆皮）或颜色（酒红、墨绿、棕色）。保持鞋子干净完好，这是品质感的体现。选择舒适的款式，创意行业可能需要长时间工作或外勤。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "date": {
+                    "sceneInfo": {
+                        "title": "约会穿搭",
+                        "desc": "优雅迷人，展现个人魅力"
+                    },
+                    "options": [
+                        {
+                            "name": "干净阳光风",
+                            "subtitle": "适合日间约会、休闲活动",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表",
+                                    "reason": "年轻男生约会一块简约手表足矣，不要佩戴过多首饰。保持干净阳光的形象。避免过于夸张或非主流的首饰。如果有耳钉，可以选择小巧低调的款式，或暂时取下。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "简约T恤/针织衫/休闲衬衫",
+                                    "reason": "选择干净清爽的基础款T恤（白、浅蓝、浅灰、淡粉、酒红），展现阳光气质。针织衫（米色、浅灰、藏青、酒红）温柔又有品味。休闲衬衫（牛津纺）解开一两颗扣子更随性。选择合身但不紧绷的版型。避免印有夸张标语或图案的款式。确保衣服干净平整，没有明显污渍或褶皱。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "牛仔裤/卡其裤",
+                                    "reason": "一条版型好的牛仔裤（直筒或修身，深蓝或黑色）是约会神器。卡其裤（卡其色、深灰、藏青）则更显利落。选择中高腰款式，优化身材比例。确保裤子干净，没有明显破洞（除非是刻意的时尚设计，但约会建议保守）。避免运动裤或过于宽松/紧身的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "牛仔外套/休闲西装/针织开衫",
+                                    "reason": "牛仔外套青春阳光，搭配T恤或针织衫都很适合。休闲西装则更显品味，适合稍正式的约会。针织开衫温柔又保暖，室内外穿脱方便。选择适合季节和场合的款式。颜色以经典色为主，与整体风格协调。一件干净整洁的外套能大幅提升好感度。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "小白鞋/休闲板鞋",
+                                    "reason": "一双干净的小白鞋是男生约会的神器，干净清爽又百搭。休闲板鞋或帆布鞋也是不错的选择。确保鞋子一尘不染，一双脏鞋会严重破坏好感度。袜子选择白色或与鞋子颜色协调的颜色。选择舒适的款式，约会可能需要大量行走。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "成熟绅士风",
+                            "subtitle": "适合正式约会、晚餐约会",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "品质手表",
+                                    "reason": "正式约会一块品质手表足矣，彰显品味与实力。选择皮质表带或金属表带，表盘设计简约。避免佩戴其他首饰。保持干净利落的绅士形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "休闲衬衫/针织衫",
+                                    "reason": "选择品质较好的休闲衬衫（牛津纺、棉麻）或针织衫（羊绒混纺、美利奴羊毛）。颜色以酒红、墨绿、藏青、米色、灰色为主。解开一两颗领口扣子，增添随性性感。选择合身但不紧绷的版型。确保衣服干净平整，熨烫过更佳。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "休闲西裤/卡其裤",
+                                    "reason": "休闲西裤或卡其裤（卡其色、藏青、深灰、酒红）更显成熟利落。选择修身但不紧绷的版型，面料以斜纹棉布或羊毛混纺为主。确保裤子干净平整，没有明显褶皱。避免牛仔裤或运动裤，保持成熟绅士形象。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "休闲西装/风衣/呢子大衣",
+                                    "reason": "一件合身的休闲西装（黑、藏青、浅灰、驼色）能瞬间提升绅士气质。春秋选择风衣（卡其色、深灰），冬季选择呢子大衣（驼色、黑、酒红、灰色）。选择合身但不紧绷的版型。颜色以经典色为主，彰显成熟品味。一件品质外套能大幅提升整体形象。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "休闲皮鞋/乐福鞋",
+                                    "reason": "选择一双干净的休闲皮鞋（德比鞋、乐福鞋），真皮材质质感高级。颜色以黑、深棕、酒红为主。确保鞋子擦亮，没有明显污渍或破损。袜子选择深色（黑、深灰、藏青），与鞋子颜色协调。投资一双品质鞋履，舒适且耐穿。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "潮流个性风",
+                            "subtitle": "适合潮流派对、主题约会",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "个性项链/简约手链",
+                                    "reason": "潮流风格可以尝试简约的金属项链或皮革手链，增添潮流感。选择银色、黑色或古铜色。不要过多佩戴，一两件足矣。保持整体协调，避免过于夸张。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "潮牌T恤/连帽卫衣",
+                                    "reason": "选择有设计感的潮牌T恤或oversize连帽卫衣，展现个性品味。颜色可以更大胆：黑色、白色、酒红、墨绿或撞色。选择oversize或修身版型，根据个人风格。避免过于普通或保守的款式。确保衣服干净整洁。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "工装裤/束脚裤/牛仔裤",
+                                    "reason": "工装裤多口袋设计实用又有造型感，是潮流风的热门单品。束脚运动裤舒适又有运动感。牛仔裤（修身或直筒）搭配简单T恤就很有型。选择黑色、深灰、军绿、卡其或牛仔蓝。避免过于宽松或邋遢的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "皮夹克/飞行员夹克/潮牌外套",
+                                    "reason": "一件黑色皮夹克（机车款）是潮流约会的神器，酷感十足。飞行员夹克（黑色或军绿色）青春又有型。潮牌外套或设计师联名款彰显时尚品味。选择oversize版型，内搭形成层次感。考虑约会场景，选择合适的款式。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "老爹鞋/潮牌运动鞋",
+                                    "reason": "厚底老爹鞋是潮流风的标志性鞋款，增高又有造型感。热门潮牌运动鞋（AJ、Yeezy等）或经典复古款式都是不错的选择。保持鞋子干净，一双脏鞋会破坏整体潮感。选择舒适的款式，约会可能需要大量行走。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "party": {
+                    "sceneInfo": {
+                        "title": "派对穿搭",
+                        "desc": "闪耀夺目，成为焦点"
+                    },
+                    "options": [
+                        {
+                            "name": "经典优雅风",
+                            "subtitle": "适合正式派对、晚宴",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "品质手表/袖扣",
+                                    "reason": "正式派对一块品质手表足矣，彰显品味与实力。如果穿法式袖口衬衫，一对精致的金属袖扣能增添细节。选择皮质表带或金属表带。避免佩戴其他首饰。保持干净利落的绅士形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "高品质衬衫",
+                                    "reason": "选择80支以上高支棉衬衫，面料挺括细腻。颜色以白、浅蓝为主，也可以尝试酒红、墨绿、深紫等深色。选择经典翻领设计。确保领口袖口干净平整。面试或重要会议前务必熨烫平整。可以选择稍微有光泽感的面料（如丝光棉），在灯光下更出彩。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "西裤",
+                                    "reason": "选择高品质西裤，面料以羊毛或羊毛混纺为主。颜色以黑、藏青、深灰为主，也可以尝试酒红、墨绿等深色。确保裤长适中，裤线笔直。选择修身但不紧绷的版型。确保裤子干净平整，熨烫过更佳。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "西装外套/呢子大衣",
+                                    "reason": "一件合身的西装外套（黑、藏青、深灰）是正式派对的必备。冬季选择羊绒或羊毛混纺大衣（驼色、黑、酒红）。选择合身但不紧绷的版型。颜色以经典深色为主，彰显成熟品味。考虑派对室内可能较热，选择方便穿脱的款式。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "正装皮鞋",
+                                    "reason": "选择一双黑色或深棕色牛津鞋或德比鞋，真皮材质质感高级。确保鞋子擦亮，没有明显污渍或破损。袜子选择深色（黑、深灰、藏青），与鞋子颜色协调。投资一双品质鞋履，舒适且耐穿。可以准备备用鞋，派对结束后更换。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "潮流派对风",
+                            "subtitle": "适合夜店、主题派对",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "个性项链/手链",
+                                    "reason": "派对是展现个性的时机，可以尝试叠戴项链或有设计感的手链。选择银色、黑色或古铜色，与派对风格更搭。避免佩戴过于贵重或夸张的首饰。可以选择有个性的戒指，但不要过多。保持整体协调。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "潮牌T恤/设计感衬衫",
+                                    "reason": "派对可以更大胆一些，选择有设计感的潮牌T恤或个性衬衫。可以尝试亮片元素、金属光泽、独特印花或标语。颜色可以更大胆：黑色、酒红、墨绿、金色、白色。选择oversize或修身版型，根据个人风格。避免过于普通或保守的款式。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "修身裤/工装裤",
+                                    "reason": "修身裤（黑色、深灰）展现腿型，搭配修身或oversize上衣都很有型。工装裤多口袋设计实用又有造型感，是潮流风的热门单品。选择黑色、军绿或深灰色。避免过于宽松或邋遢的款式。可以尝试侧边条纹或特殊设计的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "皮夹克/潮牌外套",
+                                    "reason": "一件黑色皮夹克（机车款）是派对的神器，酷感十足。潮牌外套或设计师联名款彰显时尚品味。也可以尝试亮片或金属光泽的外套。选择oversize版型，内搭形成层次感。考虑派对室内可能较热，选择方便穿脱的款式。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "潮牌运动鞋/皮鞋",
+                                    "reason": "热门潮牌运动鞋（AJ、Yeezy等）或老爹鞋是潮流派对的热门选择。也可以选择一双亮面皮鞋（黑色或酒红），更显成熟。保持鞋子干净，一双脏鞋会破坏整体潮感。选择舒适的款式，派对可能需要长时间站立。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "雅痞绅士风",
+                            "subtitle": "适合商务派对、高端场合",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "高端手表",
+                                    "reason": "高端派对一块高端手表是最好的名片，彰显品味与实力。选择经典品牌和款式，皮质表带或金属表带。避免佩戴其他首饰。保持低调奢华的形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "category": "上衣",
+                                    "name": "高支棉衬衫/针织衫",
+                                    "reason": "选择100支以上高支棉衬衫，面料细腻挺括。也可以选择高品质针织衫（羊绒、美利奴羊毛）内搭衬衫。颜色以白、浅蓝、酒红、墨绿、深紫为主。选择经典翻领设计。确保衣服干净平整，熨烫过更佳。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "高品质西裤",
+                                    "reason": "选择高品质西裤，面料以意大利或英国进口羊毛为主。颜色以藏青、深灰、炭黑、酒红为主。确保裤长适中，裤线笔直。选择修身但不紧绷的版型。投资定制或高端成衣，合身度是关键。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "高端定制西装/羊绒大衣",
+                                    "reason": "投资一套高端定制西装，选择Super 120s以上羊毛面料，颜色以藏青、深灰、炭黑为主。冬季外搭一件纯羊绒大衣（驼色、黑、藏青）。选择合身但舒适的版型。颜色以经典深色为主，彰显成熟品味。一套好西装是职场最好的投资，合身且彰显身份。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "category": "鞋子",
+                                    "name": "固特异皮鞋",
+                                    "reason": "选择英国或意大利品牌的固特异工艺皮鞋，真皮鞋底越穿越合脚。三接头牛津鞋最为经典正式。颜色以黑、深棕为主。保持鞋子一尘不染，定期专业保养。袜子选择同色系（黑、深灰、藏青），与鞋子颜色协调。一双好鞋可以穿十几年，值得投资。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "play": {
+                    "sceneInfo": {
+                        "title": "玩耍穿搭",
+                        "desc": "活力四射，舒适自在"
+                    },
+                    "options": [
+                        {
+                            "name": "专业运动风",
+                            "subtitle": "适合跑步、健身、球类运动",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "运动手环",
+                                    "reason": "运动时以实用为主，运动手环或智能手表方便看时间、计步和监测心率。选择防水款式，适合水上活动或出汗较多的场景。避免佩戴手链、项链、戒指等首饰，以免在运动中损坏或受伤。如果有耳钉，建议运动时取下或选择不易勾挂的款式。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "速干T恤/运动背心",
+                                    "reason": "选择透气速干的运动面料（涤纶、锦纶混纺），出汗后能快速蒸发保持干爽。亮色（荧光黄、橙色、天蓝）在户外更安全，拍照也好看。夏季选择无袖或背心款式更凉爽，春秋选择长袖速干衣防晒防虫。选择合身但不紧绷的版型，确保运动自如。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "运动短裤/运动长裤",
+                                    "reason": "根据运动强度选择裤长：跑步或打球可选速干运动短裤，户外徒步或秋冬选择运动长裤。选择速干、弹性好的面料，避免棉质裤子（出汗后贴身且不易干）。侧边口袋方便放置手机或小物件。选择合身但不紧绷的版型。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "防风外套/皮肤衣",
+                                    "reason": "户外活动必备一件轻便防风外套，应对早晚温差或突发风雨。皮肤衣轻薄便携，防晒又防风，是春夏户外活动的好选择。冬季选择保暖透气的抓绒外套或软壳衣。选择明亮颜色或带有反光条的款式，增加户外活动的安全性。选择可收纳款式，方便携带。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "专业运动鞋",
+                                    "reason": "根据运动类型选择合适的鞋子：跑步选缓震好的跑鞋（Asics、Nike、Adidas等），打球选篮球鞋，徒步选户外鞋。确保鞋子合脚，建议比平时大半码，留出活动空间（运动时脚会肿胀）。袜子选择专业运动袜（棉混纺或功能面料），吸汗防滑避免磨脚。新鞋建议提前磨合，避免运动时磨脚。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "休闲户外风",
+                            "subtitle": "适合野餐、郊游、轻度户外活动",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表",
+                                    "reason": "休闲户外活动可以选择一块防水运动手表或简约手表。避免佩戴贵重或易损坏的首饰。可以选择有遮阳功能的帽子（棒球帽、渔夫帽），实用又能搭配造型。太阳镜也是必备单品，保护眼睛同时增添时尚感。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "棉质T恤/休闲衬衫",
+                                    "reason": "选择舒适透气的纯棉或棉混纺T恤，颜色以浅色系为主（白、米、浅蓝），反射阳光更凉快。休闲衬衫（棉麻、牛津纺）可以防晒，也可以敞开当外套穿。选择宽松但不拖沓的版型，活动自如。夏季选择浅色，春秋可以选择稍深的颜色。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "休闲裤/牛仔裤",
+                                    "reason": "休闲裤（卡其、米色、军绿）舒适又实用，多口袋设计方便放小物件。牛仔裤（直筒、宽松）也是不错的选择，但避免在炎热天气穿着。选择舒适透气的面料，避免过于紧绷。户外活动可能需要大量行走，选择舒适的版型。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "牛仔外套/休闲外套",
+                                    "reason": "牛仔外套百搭实用，早晚温差大时可以穿。休闲外套（风衣、冲锋衣）适合多变的天气。选择轻便易携带的款式，可以系在腰间或放入包中。颜色以经典色为主，与整体休闲风格协调。根据季节选择厚度：春秋选择适中厚度，夏季可以选择防晒皮肤衣。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "小白鞋/帆布鞋/休闲鞋",
+                                    "reason": "小白鞋干净清爽，搭配任何休闲穿搭都很适合。帆布鞋（匡威、Vans款）青春活力，价格亲民。休闲板鞋或运动鞋舒适耐用。选择鞋底柔软、抓地力好的款式，适应户外不同地形。确保鞋子舒适，户外活动可能需要大量行走。新鞋建议提前穿几天磨合。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "海边度假风",
+                            "subtitle": "适合海边、泳池、热带旅行",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约手表/遮阳帽/太阳镜",
+                                    "reason": "海边度假选择防水手表（如G-Shock），不怕沾水。一顶宽檐遮阳帽（草编或布制）既能防晒又能搭配造型，是海边必备。太阳镜保护眼睛免受强烈紫外线伤害，选择偏光镜片看海水更清晰。避免佩戴贵重金属首饰，海水可能导致变色或生锈。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "速干T恤/短袖衬衫",
+                                    "reason": "海边穿搭以舒适和防晒为主。速干T恤适合水上活动，沾湿后快干。短袖衬衫（棉麻或透气面料）可以防晒，也可以敞开当外套。选择白色、米色、浅蓝或鲜艳花色，与海边氛围协调。记得准备一件长袖防晒衣，避免晒伤。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "沙滩裤/速干短裤",
+                                    "reason": "一条快干沙滩裤是海边标配，方便下水和日常活动。选择鲜艳花色或经典条纹，海边拍照更上镜。速干运动短裤也是不错的选择。避免棉质短裤，遇水后难干且贴身。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "防晒衣/轻薄衬衫",
+                                    "reason": "海边紫外线强烈，一件长袖防晒衣（UPF50+）是必备。选择轻薄透气的面料，即使在炎热天气也不会太闷。颜色选择白色或浅色系，反射阳光。也可以选择一件棉麻衬衫，早晚或空调房穿。选择方便穿脱的款式，海边穿脱频繁。"
+                                },
+                                "shoes": {
+                                    "icon": "👡",
+                                    "category": "鞋子",
+                                    "name": "夹脚拖/凉鞋/沙滩鞋",
+                                    "reason": "夹脚拖（人字拖）是海边标配，方便穿脱且不怕水。选择品质好的款式，避免磨脚。凉鞋（真皮或塑胶材质）更时尚一些。沙滩鞋（涉水鞋）适合礁石多的海滩，保护脚底。避免穿运动鞋或帆布鞋，遇水后难干且磨脚。可以准备两双轮换：一双拖鞋、一双凉鞋。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "game": {
+                    "sceneInfo": {
+                        "title": "游戏穿搭",
+                        "desc": "个性潮流，展现电竞风格"
+                    },
+                    "options": [
+                        {
+                            "name": "经典电竞风",
+                            "subtitle": "适合电竞赛事、线下观赛",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "简约项链/手链",
+                                    "reason": "电竞活动可以选择简约的金属项链或皮革手链，增添潮流感。避免佩戴影响操作的首饰，如过长的项链或易勾挂的手环。可以选择游戏主题的低调配饰。不要过多佩戴，一两件足矣。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "战队队服/游戏周边T恤",
+                                    "reason": "一件支持的战队队服或游戏周边T恤是电竞活动的标配，展现归属感和热爱。选择oversize版型，舒适又有潮流感。颜色以黑、白、灰或战队主题色为主。如果是线下活动或观赛，选择颜色鲜艳或有特色设计的款式，在人群中更显眼。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "工装裤/束脚运动裤",
+                                    "reason": "工装裤多口袋设计实用又有型，可以放置手机、充电宝、耳机等电竞必备物品。束脚运动裤舒适又有运动感。选择黑色、深灰、卡其或军绿色。避免过于紧身的牛仔裤，长时间坐姿会不舒服。选择高腰或中腰款式，优化比例。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "战队外套/棒球服",
+                                    "reason": "一件电竞战队外套（出征服、选手同款）是游戏穿搭的灵魂，瞬间识别同好。棒球服外套自带运动青春气息，搭配T恤或卫衣都很适合。选择oversize版型。考虑室内空调可能较冷，准备一件外套很有必要。颜色以黑、白、灰或战队标志性配色为主。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "老爹鞋/潮牌运动鞋",
+                                    "reason": "老爹鞋厚底增高又有潮流感，是电竞穿搭的热门选择。热门潮牌运动鞋（AJ、Yeezy、New Balance等）或经典复古款式都是不错的选择。也可以选择游戏联名款鞋履，展现深度热爱。保持鞋子干净，一双脏鞋会破坏整体潮感。线下活动可能需要长时间站立，选择舒适的款式。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "潮流街头风",
+                            "subtitle": "适合游戏发布会、行业活动",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "潮牌首饰/设计师款",
+                                    "reason": "游戏行业活动可以更时尚一些，选择潮牌或设计师款首饰展现品味。可以尝试几何形状、独特材质或小众品牌。叠戴项链、混搭风格都是可以接受的。保持一定个性但不过于夸张，行业活动需要兼顾专业度。银色、黑色或古铜色与街头风格更搭。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "潮牌T恤/设计师款上衣",
+                                    "reason": "选择有设计感的潮牌T恤或设计师款上衣，展现时尚品味。可以尝试独特剪裁、面料拼接或趣味印花。oversize版型是街头风的关键，搭配紧身裤形成对比。颜色可以大胆尝试撞色、做旧效果或特殊材质。避免过于普通或廉价的款式，行业活动需要展现品质感。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "阔腿裤/设计感牛仔裤",
+                                    "reason": "阔腿裤（高腰设计）既时尚又有气场，适合展现个性。可以尝试独特面料（灯芯绒、牛仔、工装布）或设计细节（翻边、不规则裤脚、撞色）。设计感牛仔裤（破洞、拼接、水洗做旧）自带潮流感。选择黑色、深灰、牛仔蓝或撞色。避免过于普通或保守的款式，这是展现个性的好机会。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "潮牌外套/设计师款",
+                                    "reason": "一件有设计感的外套是行业活动的名片，可以选择独特剪裁、面料或颜色。oversize西装、不对称设计、特色面料（灯芯绒、皮革、牛仔）都是不错的选择。也可以尝试设计师品牌或先锋品牌的款式。但要确保外套品质感，避免廉价感。颜色选择经典色或大胆撞色。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "设计师款鞋履/限量款",
+                                    "reason": "游戏行业可以更大胆地选择鞋履：热门潮牌、限量款、联名款或设计师品牌。老爹鞋、复古跑鞋、篮球鞋或时尚板鞋都是不错的选择。可以尝试袜子外露的穿搭方式，增添层次感。保持鞋子干净完好，这是品质感的体现。限量款或联名款可以成为话题切入点。"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Cosplay元素风",
+                            "subtitle": "适合漫展、主题派对",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "category": "首饰",
+                                    "name": "角色同款/主题首饰",
+                                    "reason": "漫展或主题派对可以选择角色同款首饰或主题元素配饰。例如：火影忍者的木叶护额、哈利波特的死亡圣器项链、精灵宝可梦的精灵球饰品等。可以选择日常也能佩戴的低调款，或还原度高的夸张款。根据角色风格选择材质和颜色。避免过于廉价或做工粗糙的款式，影响整体效果。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "category": "上衣",
+                                    "name": "角色印象服/主题T恤",
+                                    "reason": "选择印有喜爱动漫、游戏角色或主题元素的上衣，展现热爱。也可以选择\"角色印象服\"——提取角色配色或元素设计的日常服装。颜色选择角色主题色：如鸣人橙蓝、路飞红、钢铁侠红金等。可以尝试搭配角色同款配色或风格。选择舒适面料，漫展可能需要长时间穿着。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "category": "裤子",
+                                    "name": "配色呼应裤装/角色风格",
+                                    "reason": "选择与上衣或角色主题配色呼应的裤装。例如：动漫角色穿什么颜色裤子，可以选择同款颜色。也可以选择角色风格的裤装：校园风选择西裤或休闲裤，战斗风选择工装裤或修身裤。颜色选择角色主题色或基础色（黑、白、灰）。避免与整体风格不协调的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "category": "外套",
+                                    "name": "角色同款外套/主题配色",
+                                    "reason": "一件角色同款外套是漫展穿搭的亮点：如进击的巨人调查兵团斗篷、哈利波特学院袍、火影忍者晓组织风衣等。也可以选择角色主题配色的日常外套，如红色外套配鸣人风格、黑色外套配蝙蝠侠风格。选择还原度高或有明显元素的款式，让同好一眼识别。考虑漫展室内外温差，选择合适厚度。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "category": "鞋子",
+                                    "name": "角色同款/配色呼应",
+                                    "reason": "选择与角色同款或配色呼应的鞋子。例如：火影忍者的忍者靴（可以选择类似款式的马丁靴或军靴）、运动番的同款运动鞋。颜色选择角色主题色或基础色（黑、白、灰）。漫展可能需要大量行走，选择舒适的款式。可以准备创可贴备用。"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "adult": {
+                "daily": {
+                    "options": [
+                        {
+                            "name": "品质休闲风",
+                            "subtitle": "适合30+的日常穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "经典手表/简约手链",
+                                    "reason": "30+后选择更有品质感的配饰，一块经典品牌手表（机械表或高端石英表）彰显品味与阅历。简约皮革手链或编织手绳增添随性气质。避免佩戴过于花哨或廉价的饰品，选择经得起时间考验的设计。投资经典款式，可以佩戴多年。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "品质T恤/针织衫",
+                                    "reason": "选择面料更好的基础款：高支棉T恤、丝光棉或品质针织衫。颜色以经典色为主：白、米、藏青、深灰、酒红。选择经典剪裁，避免过于潮流或幼稚的设计。投资几件高品质单品，比十件廉价衣服更值得。确保衣服干净平整，没有明显磨损。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "品质牛仔裤/休闲裤",
+                                    "reason": "选择版型好、面料优质的牛仔裤（深色、中高腰、直筒或微喇）。投资品牌牛仔裤（Levi's、Lee等高端线），耐穿且版型更优。休闲裤（卡其色、藏青、深灰）更显利落。选择中高腰设计，优化身材比例。避免低腰、破洞或过于紧身的款式。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "经典风衣/品质外套",
+                                    "reason": "投资一件经典版型的高品质风衣（卡其、黑、藏青），可以穿很多年。春秋选择休闲西装或牛仔外套（品质款），冬季选择羊毛混纺大衣。颜色以经典色为主。选择合身但不紧绷的版型。避免过于花哨或潮流的设计，经典款更耐穿。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "休闲皮鞋/品质运动鞋",
+                                    "reason": "选择真皮材质的休闲鞋（乐福鞋、德比鞋）或高品质运动鞋。颜色以黑、棕、白为主。投资一两双品质好的鞋子，舒适且耐穿。保持鞋子干净整洁，这是品质感的重要细节。定期保养，延长使用寿命。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "business": {
+                    "options": [
+                        {
+                            "name": "权威商务风",
+                            "subtitle": "适合管理岗位、重要会议",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "高端手表/简约袖扣",
+                                    "reason": "管理岗位选择一块有分量的手表（机械表、贵金属材质），彰显品味与实力。如果穿法式袖口衬衫，一对低调的金属袖扣能增添精致细节。避免佩戴手链、项链、戒指等其他首饰，保持权威稳重。投资经典品牌，保值且提升形象。选择低调但有分量的款式。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "高支棉定制衬衫",
+                                    "reason": "选择100支以上高支棉定制衬衫，面料挺括细腻，彰显品质。颜色以白色、浅蓝色为主，细条纹或小方格也可接受。选择经典翻领设计。确保剪裁合身，面料垂坠感好。投资定制或高端成衣，合身度是关键。准备多件轮换，保持每天整洁。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "同色系西裤",
+                                    "reason": "选择与西装同色系的高品质西裤，面料以意大利或英国进口羊毛为主。裤长适中，裤线笔直。颜色以藏青、深灰、炭黑为主。投资定制西装，合身度是关键。确保裤腰合身，能插入一根手指为宜。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "高端定制西装/羊绒大衣",
+                                    "reason": "投资一两套高端定制西装，选择Super 150s以上羊毛面料，颜色以藏青、深灰、炭黑为主。单排两粒扣或双排扣经典款式。冬季外搭一件纯羊绒大衣（驼色、黑、藏青），长度过膝。资深人士的着装是实力的象征，投资高品质西装很有必要。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "固特异皮鞋",
+                                    "reason": "选择英国或意大利品牌的固特异工艺皮鞋，真皮鞋底越穿越合脚。三接头牛津鞋最为经典正式。颜色以黑、深棕为主。保持鞋子一尘不染，定期专业保养。袜子选择同色系（黑、深灰、藏青），与鞋子颜色协调。一双好鞋可以穿十几年，值得投资。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "date": {
+                    "options": [
+                        {
+                            "name": "成熟魅力风",
+                            "subtitle": "适合30+的约会穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "品质手表",
+                                    "reason": "30+后一块品质手表是最好的配饰，彰显品味与实力。选择皮质表带或金属表带，表盘设计简约。避免佩戴其他首饰。保持干净利落的成熟形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "休闲衬衫/品质针织衫",
+                                    "reason": "选择品质较好的休闲衬衫（牛津纺、棉麻）或针织衫（羊绒混纺、美利奴羊毛）。颜色以酒红、墨绿、藏青、米色、灰色为主。解开一两颗领口扣子，增添随性性感。选择合身但不紧绷的版型。确保衣服干净平整，熨烫过更佳。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "休闲西裤/卡其裤",
+                                    "reason": "休闲西裤或卡其裤（卡其色、藏青、深灰、酒红）更显成熟利落。选择修身但不紧绷的版型，面料以斜纹棉布或羊毛混纺为主。确保裤子干净平整，没有明显褶皱。避免牛仔裤或运动裤，保持成熟绅士形象。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "休闲西装/风衣/呢子大衣",
+                                    "reason": "一件合身的休闲西装（黑、藏青、浅灰、驼色）能瞬间提升绅士气质。春秋选择风衣（卡其色、深灰），冬季选择呢子大衣（驼色、黑、酒红、灰色）。选择合身但不紧绷的版型。颜色以经典色为主，彰显成熟品味。一件品质外套能大幅提升整体形象。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "休闲皮鞋/乐福鞋",
+                                    "reason": "选择一双干净的休闲皮鞋（德比鞋、乐福鞋），真皮材质质感高级。颜色以黑、深棕、酒红为主。确保鞋子擦亮，没有明显污渍或破损。袜子选择深色（黑、深灰、藏青），与鞋子颜色协调。投资一双品质鞋履，舒适且耐穿。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "party": {
+                    "options": [
+                        {
+                            "name": "典雅绅士风",
+                            "subtitle": "适合30+的派对穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "高端手表",
+                                    "reason": "30+后派对一块高端手表是最好的配饰，彰显品味与实力。选择经典品牌和款式，皮质表带或金属表带。避免佩戴其他首饰。保持低调奢华的形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "高支棉衬衫/品质针织衫",
+                                    "reason": "选择100支以上高支棉衬衫，面料细腻挺括。也可以选择高品质针织衫（羊绒、美利奴羊毛）内搭衬衫。颜色以白、浅蓝、酒红、墨绿、深紫为主。选择经典翻领设计。确保衣服干净平整，熨烫过更佳。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "高品质西裤",
+                                    "reason": "选择高品质西裤，面料以意大利或英国进口羊毛为主。颜色以藏青、深灰、炭黑、酒红为主。确保裤长适中，裤线笔直。选择修身但不紧绷的版型。投资定制或高端成衣，合身度是关键。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "高端定制西装/羊绒大衣",
+                                    "reason": "投资一套高端定制西装，选择Super 120s以上羊毛面料，颜色以藏青、深灰、炭黑为主。冬季外搭一件纯羊绒大衣（驼色、黑、藏青）。选择合身但舒适的版型。颜色以经典深色为主，彰显成熟品味。一套好西装是职场最好的投资，合身且彰显身份。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "固特异皮鞋",
+                                    "reason": "选择英国或意大利品牌的固特异工艺皮鞋，真皮鞋底越穿越合脚。三接头牛津鞋最为经典正式。颜色以黑、深棕为主。保持鞋子一尘不染，定期专业保养。袜子选择同色系（黑、深灰、藏青），与鞋子颜色协调。一双好鞋可以穿十几年，值得投资。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "play": {
+                    "options": [
+                        {
+                            "name": "品质运动风",
+                            "subtitle": "适合30+的运动穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "运动手表",
+                                    "reason": "选择高品质运动手表（如Garmin、Apple Watch、高端颂拓），功能实用且有设计感。避免佩戴贵重或易损坏的首饰。可以选择专业运动品牌的配饰，品质更有保障。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "高端运动品牌/品质速干衣",
+                                    "reason": "选择高端运动品牌（Lululemon、Nike高端线、Adidas by Stella McCartney、始祖鸟等），面料科技含量高，设计也更时尚。颜色以黑、深灰、藏青、酒红为主，避免过于鲜艳或幼稚的颜色。选择合身但不紧绷的版型。投资高品质运动装，舒适且耐穿。优先考虑面料的透气性和舒适度。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "品质运动裤/休闲裤",
+                                    "reason": "选择垂坠感好、面料柔软的运动裤或休闲裤。高腰设计，舒适且优化比例。颜色以黑、深灰、藏青、卡其为主。选择宽松但不拖沓的版型。避免低腰、过于紧身或薄透的款式。优先考虑舒适度和面料质感。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "高端运动外套/皮肤衣",
+                                    "reason": "选择高端运动品牌的外套，面料科技含量高，设计也更时尚。皮肤衣选择品质好的款式，轻薄透气。颜色以黑、深灰、藏青、酒红为主。避免过于鲜艳或花哨的颜色。选择经典款式，穿得更久。优先考虑舒适度和实用性。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "高端运动鞋/专业跑鞋",
+                                    "reason": "选择高端品牌的专业运动鞋（Asics、Brooks、Saucony、New Balance高端线等），保护关节且舒适。避免过于花哨或限量款炒作的款式。颜色以黑、白、深灰为主。投资一双好的鞋子，对脚部和关节健康很重要。确保鞋底防滑，安全第一。定期更换，鞋底磨损后及时换新。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "game": {
+                    "options": [
+                        {
+                            "name": "低调热爱风",
+                            "subtitle": "适合30+的游戏爱好者",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "经典手表",
+                                    "reason": "30+后选择一块经典手表，搭配非常低调的游戏元素饰品（如果有）。避免过于夸张或幼稚的款式。选择品质好的材质和做工。保持成熟优雅的形象，兴趣是私人的享受。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "品质休闲衫/低调元素",
+                                    "reason": "选择高品质休闲衫：Polo衫、针织衫、简约T恤。如果想表达游戏热爱，选择设计非常低调的款式（抽象元素、小众联名）。颜色以黑、白、深灰、藏青、酒红为主。选择优质面料和经典剪裁。避免印有大logo或幼稚图案的款式。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "品质休闲裤/深色牛仔裤",
+                                    "reason": "选择高品质休闲裤（卡其、藏青、深灰）或深色牛仔裤（直筒版型）。中高腰设计，舒适且优化比例。颜色以经典色为主。避免低腰、破洞或过于紧身的款式。选择优质面料，耐穿且版型更好。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "经典休闲外套",
+                                    "reason": "选择经典款式的休闲外套：风衣、休闲西装、针织外套、高品质牛仔外套。颜色以经典色为主。避免过于花哨或夸张的设计。投资经典款式，穿得更久也更有质感。保持成熟优雅的形象。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "品质休闲鞋/经典运动鞋",
+                                    "reason": "选择品质休闲鞋（乐福鞋、真皮板鞋）或经典款运动鞋。避免过于花哨或限量款炒作的款式。颜色以黑、白、深灰为主。保持鞋子干净整洁。投资经典款式，不过时且耐穿。优先考虑舒适度。"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "senior": {
+                "daily": {
+                    "options": [
+                        {
+                            "name": "优雅舒适风",
+                            "subtitle": "适合成熟人士的日常穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "经典手表",
+                                    "reason": "成熟年龄选择一块经典品牌手表，彰显阅历与品味。避免佩戴过于花哨或廉价的饰品。投资经典款式，可以佩戴多年。选择品质好的材质和做工。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "纯棉衬衫/品质针织衫",
+                                    "reason": "选择纯棉、重磅棉或高品质针织面料，舒适且显高级。颜色以米色、浅蓝、酒红、墨绿、藏青、灰色为主。选择经典翻领或小V领设计。避免过于暴露或紧身的款式。选择宽松但不拖沓的版型，舒适且得体。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "休闲裤/西裤",
+                                    "reason": "选择直筒休闲裤或西裤，舒适又有气场。选择垂坠感好的面料：羊毛混纺、重磅棉、斜纹布。颜色以黑、藏青、深灰、米色、卡其为主。中高腰设计，优化身材比例。避免低腰或过于紧身的款式。优先考虑舒适度。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "经典风衣/羊绒大衣",
+                                    "reason": "投资一件经典版型的高品质风衣（卡其、藏青、灰色），任何年龄都能穿。冬季选择羊绒或羊毛混纺大衣（驼色、黑、酒红、灰色），长度过膝。选择合身但舒适的版型。颜色以经典色为主，耐穿且容易搭配。避免过于潮流或花哨的设计。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "低跟真皮鞋/舒适平底鞋",
+                                    "reason": "选择2-3厘米的低跟或粗跟鞋，真皮材质舒适且质感好。乐福鞋、小皮鞋或精致平底鞋都是不错的选择。颜色以黑、棕、酒红、米色为主。确保鞋底防滑，安全第一。投资舒适的鞋子，对脚部健康很重要。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "business": {
+                    "options": [
+                        {
+                            "name": "资深权威风",
+                            "subtitle": "适合资深人士的商务穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "经典手表/简约袖扣",
+                                    "reason": "资深人士选择一块有历史感或品牌经典款手表，彰显阅历与品味。如果穿法式袖口衬衫，一对低调的金属袖扣能增添精致细节。避免佩戴夸张或时尚感过强的首饰。投资品牌经典款，保值且彰显身份。选择低调但有分量的款式。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "高支棉定制衬衫",
+                                    "reason": "选择120支以上高支棉衬衫，面料细腻挺括，彰显品质。颜色以白色、浅蓝色为主，细条纹或小方格也可接受。选择经典翻领设计。确保剪裁合身，面料垂坠感好。投资定制或高端成衣，合身度是关键。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "同色系西裤",
+                                    "reason": "选择与西装同色系的高品质西裤，面料以意大利或英国进口羊毛为主。裤长适中，裤线笔直。颜色以藏青、深灰、炭黑为主。投资定制西装，展现资深人士的品味与实力。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "高端定制西装/羊绒大衣",
+                                    "reason": "投资一两套高端定制西装，选择Super 150s以上羊毛面料，颜色以藏青、深灰、炭黑为主。单排两粒扣或双排扣经典款式。冬季外搭一件纯羊绒大衣（驼色、黑、藏青），长度过膝。资深人士的着装是实力的象征，投资高品质西装很有必要。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "固特异皮鞋",
+                                    "reason": "选择英国或意大利品牌的固特异工艺皮鞋，真皮鞋底越穿越合脚。三接头牛津鞋最为经典正式。颜色以黑、深棕为主。保持鞋子一尘不染，定期专业保养。袜子选择同色系（黑、深灰、藏青），与鞋子颜色协调。一双好鞋可以穿十几年，值得投资。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "date": {
+                    "options": [
+                        {
+                            "name": "典雅风韵风",
+                            "subtitle": "适合成熟人士的约会穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "品质手表",
+                                    "reason": "成熟年龄一块品质手表是最好的配饰，彰显品味与实力。选择皮质表带或金属表带，表盘设计简约。避免佩戴其他首饰。保持干净利落的成熟形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "休闲衬衫/品质针织衫",
+                                    "reason": "选择品质较好的休闲衬衫（牛津纺、棉麻）或针织衫（羊绒混纺、美利奴羊毛）。颜色以酒红、墨绿、藏青、米色、灰色为主。解开一两颗领口扣子，增添随性性感。选择合身但不紧绷的版型。确保衣服干净平整，熨烫过更佳。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "休闲西裤/卡其裤",
+                                    "reason": "休闲西裤或卡其裤（卡其色、藏青、深灰、酒红）更显成熟利落。选择修身但不紧绷的版型，面料以斜纹棉布或羊毛混纺为主。确保裤子干净平整，没有明显褶皱。避免牛仔裤或运动裤，保持成熟绅士形象。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "休闲西装/风衣/呢子大衣",
+                                    "reason": "一件合身的休闲西装（黑、藏青、浅灰、驼色）能瞬间提升绅士气质。春秋选择风衣（卡其色、深灰），冬季选择呢子大衣（驼色、黑、酒红、灰色）。选择合身但不紧绷的版型。颜色以经典色为主，彰显成熟品味。一件品质外套能大幅提升整体形象。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "休闲皮鞋/乐福鞋",
+                                    "reason": "选择一双干净的休闲皮鞋（德比鞋、乐福鞋），真皮材质质感高级。颜色以黑、深棕、酒红为主。确保鞋子擦亮，没有明显污渍或破损。袜子选择深色（黑、深灰、藏青），与鞋子颜色协调。投资一双品质鞋履，舒适且耐穿。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "party": {
+                    "options": [
+                        {
+                            "name": "华贵典雅风",
+                            "subtitle": "适合成熟人士的派对穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "高端手表",
+                                    "reason": "成熟年龄派对一块高端手表是最好的配饰，彰显品味与实力。选择经典品牌和款式，皮质表带或金属表带。避免佩戴其他首饰。保持低调奢华的形象。"
+                                },
+                                "top": {
+                                    "icon": "👔",
+                                    "name": "高支棉衬衫/品质针织衫",
+                                    "reason": "选择100支以上高支棉衬衫，面料细腻挺括。也可以选择高品质针织衫（羊绒、美利奴羊毛）内搭衬衫。颜色以白、浅蓝、酒红、墨绿、深紫为主。选择经典翻领设计。确保衣服干净平整，熨烫过更佳。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "高品质西裤",
+                                    "reason": "选择高品质西裤，面料以意大利或英国进口羊毛为主。颜色以藏青、深灰、炭黑、酒红为主。确保裤长适中，裤线笔直。选择修身但不紧绷的版型。投资定制或高端成衣，合身度是关键。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "高端定制西装/羊绒大衣",
+                                    "reason": "投资一套高端定制西装，选择Super 120s以上羊毛面料，颜色以藏青、深灰、炭黑为主。冬季外搭一件纯羊绒大衣（驼色、黑、藏青）。选择合身但舒适的版型。颜色以经典深色为主，彰显成熟品味。一套好西装是职场最好的投资，合身且彰显身份。"
+                                },
+                                "shoes": {
+                                    "icon": "👞",
+                                    "name": "固特异皮鞋",
+                                    "reason": "选择英国或意大利品牌的固特异工艺皮鞋，真皮鞋底越穿越合脚。三接头牛津鞋最为经典正式。颜色以黑、深棕为主。保持鞋子一尘不染，定期专业保养。袜子选择同色系（黑、深灰、藏青），与鞋子颜色协调。一双好鞋可以穿十几年，值得投资。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "play": {
+                    "options": [
+                        {
+                            "name": "舒适运动风",
+                            "subtitle": "适合成熟人士的运动穿搭",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "运动手表",
+                                    "reason": "选择高品质运动手表，监测心率和运动数据，功能实用。避免佩戴贵重或易损坏的首饰。可以选择专业运动品牌的配饰，品质更有保障。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "品质速干衣/舒适T恤",
+                                    "reason": "选择高品质运动品牌，面料柔软舒适，支撑性好。颜色以黑、深灰、藏青、酒红、紫色为主，避免过于鲜艳的颜色。选择宽松但不拖沓的版型。投资高品质运动装，舒适且耐穿。优先考虑面料的透气性和舒适度。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "舒适运动裤/品质休闲裤",
+                                    "reason": "选择垂坠感好、面料柔软的运动裤或休闲裤。高腰设计，舒适且优化比例。颜色以黑、深灰、藏青、卡其为主。选择宽松但不拖沓的版型。避免低腰、过于紧身或薄透的款式。优先考虑舒适度和面料质感。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "舒适外套/皮肤衣",
+                                    "reason": "选择舒适保暖的外套：抓绒衣、软壳衣、轻便风衣。皮肤衣选择轻薄透气的款式。颜色以黑、深灰、藏青、酒红为主。避免过于鲜艳或花哨的颜色。选择经典款式，穿得更久。优先考虑舒适度和实用性。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "舒适运动鞋/专业健步鞋",
+                                    "reason": "选择专业健步鞋或舒适运动鞋，优先考虑缓震和支撑性，保护关节。避免过于花哨或硬底的款式。颜色以黑、深灰、白色为主。投资一双好的鞋子，对脚部和关节健康很重要。确保鞋底防滑，安全第一。定期更换，鞋底磨损后及时换新。"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "game": {
+                    "options": [
+                        {
+                            "name": "含蓄兴趣风",
+                            "subtitle": "适合成熟游戏爱好者",
+                            "items": {
+                                "jewelry": {
+                                    "icon": "💎",
+                                    "name": "经典手表",
+                                    "reason": "成熟爱好者选择一块经典手表，搭配非常低调的游戏元素饰品（如果有）。避免过于夸张或幼稚的款式。选择品质好的材质和做工。保持成熟优雅的形象，兴趣是私人的享受。"
+                                },
+                                "top": {
+                                    "icon": "👕",
+                                    "name": "品质休闲衫/低调元素",
+                                    "reason": "选择高品质休闲衫：Polo衫、针织衫、简约T恤。如果想表达游戏热爱，选择设计非常低调的款式（抽象元素、小众联名）。颜色以黑、白、深灰、藏青、酒红为主。选择优质面料和经典剪裁。避免印有大logo或幼稚图案的款式。"
+                                },
+                                "bottom": {
+                                    "icon": "👖",
+                                    "name": "品质休闲裤/深色牛仔裤",
+                                    "reason": "选择高品质休闲裤（卡其、藏青、深灰）或深色牛仔裤（直筒版型）。中高腰设计，舒适且优化比例。颜色以经典色为主。避免低腰、破洞或过于紧身的款式。选择优质面料，耐穿且版型更好。"
+                                },
+                                "outerwear": {
+                                    "icon": "🧥",
+                                    "name": "经典休闲外套",
+                                    "reason": "选择经典款式的休闲外套：风衣、休闲西装、针织外套、高品质牛仔外套。颜色以经典色为主。避免过于花哨或夸张的设计。投资经典款式，穿得更久也更有质感。保持成熟优雅的形象。"
+                                },
+                                "shoes": {
+                                    "icon": "👟",
+                                    "name": "品质休闲鞋/经典运动鞋",
+                                    "reason": "选择品质休闲鞋（乐福鞋、真皮板鞋）或经典款运动鞋。避免过于花哨或限量款炒作的款式。颜色以黑、白、深灰为主。保持鞋子干净整洁。投资经典款式，不过时且耐穿。优先考虑舒适度。"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+    </script>
 
     <footer>
         <p>时尚穿搭指南 - 让每一天都穿得精彩</p>
